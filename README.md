@@ -13,6 +13,18 @@ Modal popups serve to focus the attention of users on a particular UI element. T
 6. Add a class called "popup" to the "Popup" control *Classes* property 
 7. Drag any controls you wish to display into the popup into the control named "Popup"
 
+## EventHandler Setup
+1. Drag a *Button* or *Link* control to the page and name it "OpenPopup"
+2. Add a *Click* eventhandler to the "OpenPopup" control
+3. Drag a *SetValue* action into the *OpenPopup.Click* eventhandler
+   1. Set the Target property to: *Overlay.visible*
+   2. Set the Value property to: *true*
+4. Drag a *Button* or *Link* control to the page and name it "ClosePopup"
+2. Add a *Click* eventhandler to the "ClosePopup" control
+3. Drag a *SetValue* action into the *ClosePopup.Click* eventhandler
+   1. Set the Target property to: *Overlay.visible*
+   2. Set the Value property to: *false*
+
 ## StyleSheet CSS
 Paste the CSS below into the StyleSheet and adjust the variables in the *:root* element as you see fit
 ```
@@ -42,15 +54,3 @@ Paste the CSS below into the StyleSheet and adjust the variables in the *:root* 
 	max-height: 85vh;
 }
 ```
-
-## EventHandler Setup
-1. Drag a *Button* or *Link* control to the page and name it "OpenPopup"
-2. Add a *Click* eventhandler to the "OpenPopup" control
-3. Drag a *SetValue* action into the *OpenPopup.Click* eventhandler
-   1. Set the Target property to: *Overlay.visible*
-   2. Set the Value property to: *true*
-4. Drag a *Button* or *Link* control to the page and name it "ClosePopup"
-2. Add a *Click* eventhandler to the "ClosePopup" control
-3. Drag a *SetValue* action into the *ClosePopup.Click* eventhandler
-   1. Set the Target property to: *Overlay.visible*
-   2. Set the Value property to: *false*
