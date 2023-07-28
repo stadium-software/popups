@@ -4,6 +4,10 @@ Simple modal popup implementation
 ## Description
 Modal popups serve to focus the attention of users on a particular UI element. This is done to allow the users to focus on a specific task. Modal popups are most appropriate for subtasks, such as adding or updating table rows and returning users back to the previous view. 
 
+
+https://github.com/stadium-software/popups/assets/2085324/215c2899-b09f-4286-b412-cde8be4a72c8
+
+
 ## Page Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
 2. Drag a *Container* control to a page and name it "Overlay"
