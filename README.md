@@ -15,7 +15,7 @@ Modal popups serve to focus the attention of users on a particular UI element. T
 
 ## StyleSheet CSS
 Paste the CSS below into the StyleSheet and adjust the variables in the *:root* element as you see fit
-<code>
+```
 :root {
     --overlayBackgroundColor: rgba(0,0,0,0.5);
     --popupBackgroundColor: #ffffff;
@@ -41,7 +41,7 @@ Paste the CSS below into the StyleSheet and adjust the variables in the *:root* 
 	overflow: auto;
 	max-height: 85vh;
 }
-</code>
+```
 
 ## EventHandler Setup
 1. Drag a *Button* or *Link* control to the page and name it "OpenPopup"
