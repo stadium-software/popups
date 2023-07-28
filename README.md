@@ -9,7 +9,6 @@ https://github.com/stadium-software/popups/assets/2085324/215c2899-b09f-4286-b41
 
 
 ## Page Setup
-1. Check the *Enable Style Sheet* checkbox in the application properties
 2. Drag a *Container* control to a page and name it "Overlay"
 3. Add a class called "overlay" to the "Overlay" control *Classes* property 
 4. Set the *Visible* property of the "Overlay" control to "false"
@@ -30,7 +29,8 @@ https://github.com/stadium-software/popups/assets/2085324/215c2899-b09f-4286-b41
    2. Set the Value property to: *false*
 
 ## StyleSheet CSS
-Paste the CSS below into the StyleSheet and adjust the variables in the *:root* element as you see fit
+1. Check the *Enable Style Sheet* checkbox in the application properties
+2. Paste the CSS below into the StyleSheet and adjust the variables in the *:root* element as you see fit
 ```
 :root {
     --overlayBackgroundColor: rgba(0,0,0,0.5);
