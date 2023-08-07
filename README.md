@@ -8,8 +8,10 @@ Modal popups serve to focus the attention of users on a particular UI element. T
 https://github.com/stadium-software/ModalContents/assets/2085324/215c2899-b09f-4286-b412-cde8be4a72c8
 
 
-## Page Setup
+## Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
+
+## Page Setup
 2. Drag a *Container* control to a page and name it "ModalBackground"
 3. Add a class called "custom-modal-background" to the "ModalBackground" control *Classes* property 
 4. Set the *Visible* property of the "ModalBackground" control to "false"
