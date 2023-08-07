@@ -1,6 +1,6 @@
 /*There should be no need to change anything in this file*/
 html {
-    /*The page background*/
+    /*The popup background*/
     & .custom-modal-background {
         position: fixed;
         display: grid;

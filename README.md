@@ -2,7 +2,7 @@
 Modal ModalContent implementation
 
 ## Description
-Modal ModalContents serve to focus the attention of users on a particular UI element. This is done to allow the users to focus on a specific task. Modal ModalContents are most appropriate for subtasks, such as adding or updating table rows and returning users back to the previous view. 
+Modal popups serve to focus the attention of users on a particular UI element. This is done to allow the users to focus on a specific task. Such popups are most appropriate for subtasks, such as adding or updating table rows and returning users back to the previous view. 
 
 
 https://github.com/stadium-software/ModalContents/assets/2085324/215c2899-b09f-4286-b412-cde8be4a72c8
