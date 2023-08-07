@@ -12,12 +12,12 @@ https://github.com/stadium-software/ModalContents/assets/2085324/215c2899-b09f-4
 1. Check the *Enable Style Sheet* checkbox in the application properties
 
 ## Page Setup
-2. Drag a *Container* control to a page and name it "ModalBackground"
-3. Add a class called "custom-modal-background" to the "ModalBackground" control *Classes* property 
-4. Set the *Visible* property of the "ModalBackground" control to "false"
-5. Drag a container inside the "ModalBackground" control and name it "ModalContent"
-6. Add a class called "custom-modal-content" to the "ModalContent" control *Classes* property 
-7. Drag any controls you wish to display into the ModalContent into the control named "ModalContent"
+1. Drag a *Container* control to a page and name it "ModalBackground"
+2. Add a class called "custom-modal-background" to the "ModalBackground" control *Classes* property 
+3. Set the *Visible* property of the "ModalBackground" control to "false"
+4. Drag a container inside the "ModalBackground" control and name it "ModalContent"
+5. Add a class called "custom-modal-content" to the "ModalContent" control *Classes* property 
+6. Drag any controls you wish to display into the ModalContent into the control named "ModalContent"
 
 ## EventHandler Setup
 1. Drag a *Button* or *Link* control to the page and name it "OpenModal"
