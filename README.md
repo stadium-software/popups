@@ -32,14 +32,15 @@ https://github.com/stadium-software/ModalContents/assets/2085324/215c2899-b09f-4
    2. Set the Value property to: *false*
 
 ## StyleSheet CSS
-1. Open the CSS file called *modal-variables.css* from this repo in an editor of your choice I recommend [VS Code](https://code.visualstudio.com/))
+1. Open the CSS file called *modal-variables.css* from this repo in an editor of your choice (I recommend [VS Code](https://code.visualstudio.com/))
 2. Adjust the variables in the *:root* element as you see fit
 
 ## Applying the CSS
 How to apply the CSS to your application
 
 ### Stadium 6 (versions 6.6 and above)
-Add the two CSS files to the Embedded Files of your application and paste the link tags below into the *head* property of your application
+1. Add the two CSS files to the Embedded Files of your application
+2. Paste the link tags below into the *head* property of your application
 ```
 <link rel="stylesheet" href="{EmbeddedFiles}/modal.css">
 <link rel="stylesheet" href="{EmbeddedFiles}/modal-variables.css">
