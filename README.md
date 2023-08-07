@@ -1,5 +1,5 @@
-# ModalContents
-Modal ModalContent implementation
+# Modal Popups
+Simple modal popups for Stadium 5 and 6
 
 ## Description
 Modal popups serve to focus the attention of users on a particular UI element. This is done to allow the users to focus on a specific task. Such popups are most appropriate for subtasks, such as adding or updating table rows and returning users back to the previous view. 
