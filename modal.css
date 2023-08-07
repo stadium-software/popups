@@ -1,0 +1,30 @@
+/*There should be no need to change anything in this file*/
+html {
+    /*The page background*/
+    & .custom-modal-background {
+        position: fixed;
+        display: grid;
+        justify-items: center;
+        align-items: var(--modal-content-alignment, start);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: var(--modal-background-background-color, rgba(0, 0, 0, 0.5));
+        z-index: 1000;
+    }
+    /*The popup window*/
+    & .custom-modal-content {
+        display: inline-block;
+        margin-top: var(--modal-content-pixels-from-top, 60px);
+        background-color: var(--modal-content-background-color, #ffffff);
+        border-radius: 6px;
+        border: 1px solid var(--modal-content-border-color, #2196f3);
+        padding: 20px;
+        box-shadow: var(--modal-content-shadow-color, rgba(0, 0, 0, 0.45)) 0px 5px 15px;
+        overflow: auto;
+        max-height: calc(96vh - var(--modal-content-pixels-from-top, 0));
+        max-width: 96vw;
+        z-index: 1001;
+    }
+}
