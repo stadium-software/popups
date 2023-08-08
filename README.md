@@ -4,9 +4,10 @@ Simple modal popups for Stadium 5 and 6
 ## Description
 Modal popups serve to focus the attention of users on a particular UI element. This is done to allow the users to focus on a specific task. Such popups are most appropriate for subtasks, such as adding or updating table rows and returning users back to the previous view. 
 
-
 https://github.com/stadium-software/ModalContents/assets/2085324/215c2899-b09f-4286-b412-cde8be4a72c8
 
+## Version
+1.0
 
 ## Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
@@ -59,3 +60,13 @@ el2.setAttribute("rel","stylesheet");
 el2.setAttribute("href",URL + "Content/EmbeddedFiles/modal-variables.css");
 document.querySelector("head").appendChild(el2);
 ``` 
+
+## Upgrading
+To upgrade this module
+1. Pull the latest repo
+2. If you have made changes to the *modal-variables.css* file in your local repo, merge them
+3. You can drag the *modal.css* file into the EmbeddedFiles folder of your application as is
+4. Select "Overwrite" when prompted in Stadium
+5. Open the *modal-variables.css* file 
+6. If new variables were added, change the variables as you see fit 
+7. Drag the updated *modal-variables.css* file into the EmbeddedFiles folder of your application
