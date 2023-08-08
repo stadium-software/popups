@@ -1,5 +1,6 @@
 /*Adjust these variables to customise the popup*/
 :root {
+    /*Version 1.0*/
     --modal-background-background-color: rgba(0, 0, 0, 0.5);
     
     --modal-content-background-color: #ffffff;
