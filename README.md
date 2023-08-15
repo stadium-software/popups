@@ -48,7 +48,8 @@ How to apply the CSS to your application
 ``` 
 
 ### Stadium 5
-Add a Javascript action into the Page.load event handler and paste the Javascript below into the Code Editor popup
+1. Add a Javascript action into the Page.load event handler 
+2. Paste the Javascript below into the Javascript action Code Editor popup
 ```
 let URL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname + "//";
 let el1 = document.createElement("link");
