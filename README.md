@@ -13,23 +13,23 @@ https://github.com/stadium-software/ModalContents/assets/2085324/215c2899-b09f-4
 1. Check the *Enable Style Sheet* checkbox in the application properties
 
 ## Page Setup
-1. Drag a *Container* control to a page and name it "ModalBackground"
-2. Add a class called "custom-modal-background" to the "ModalBackground" control *Classes* property 
-3. Set the *Visible* property of the "ModalBackground" control to "false"
-4. Drag a container inside the "ModalBackground" control and name it "ModalContent"
-5. Add a class called "custom-modal-content" to the "ModalContent" control *Classes* property 
-6. Drag any controls you wish to display into the ModalContent into the control named "ModalContent"
+1. Drag a *Container* control to a page and name it "ModalBackgroundContainer"
+2. Add a class called "custom-modal-background" to the "ModalBackgroundContainer" control *Classes* property 
+3. Set the *Visible* property of the "ModalBackgroundContainer" control to "false"
+4. Drag a container inside the "ModalBackgroundContainer" control and name it "ModalContentContainer"
+5. Add a class called "custom-modal-content" to the "ModalContentContainer" control *Classes* property 
+6. Drag any controls you wish to display into the ModalContent into the control named "ModalContentContainer"
 
 ## EventHandler Setup
-1. Drag a *Button* or *Link* control to the page and name it "OpenModal"
-2. Add a *Click* eventhandler to the "OpenModal" control
-3. Drag a *SetValue* action into the *OpenModal.Click* eventhandler
-   1. Set the Target property to: *ModalBackground.visible*
+1. Drag a *Button* or *Link* control to the page and name it "OpenModalButton"
+2. Add a *Click* eventhandler to the "OpenModalButton" control
+3. Drag a *SetValue* action into the *OpenModalButton.Click* eventhandler
+   1. Set the Target property to: *ModalBackgroundContainer.visible*
    2. Set the Value property to: *true*
-4. Drag a *Button* or *Link* control to the page and name it "CloseModal"
-2. Add a *Click* eventhandler to the "CloseModal" control
-3. Drag a *SetValue* action into the *CloseModal.Click* eventhandler
-   1. Set the Target property to: *ModalBackground.visible*
+4. Drag a *Button* or *Link* control to the page and name it "CloseModalButton"
+2. Add a *Click* eventhandler to the "CloseModalButton" control
+3. Drag a *SetValue* action into the *CloseModalButton.Click* eventhandler
+   1. Set the Target property to: *ModalBackgroundContainer.visible*
    2. Set the Value property to: *false*
 
 ## StyleSheet CSS
