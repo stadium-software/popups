@@ -26,21 +26,22 @@ https://github.com/stadium-software/ModalContents/assets/2085324/215c2899-b09f-4
 3. Drag a *SetValue* action into the *OpenModalButton.Click* eventhandler
    1. Set the Target property to: *ModalBackgroundContainer.visible*
    2. Set the Value property to: *true*
-4. Drag a *Button* or *Link* control to the page and name it "CloseModalButton"
+4. Drag a *Button* or *Link* control into the "ModalContentContainer" control and name it "CloseModalButton"
 2. Add a *Click* eventhandler to the "CloseModalButton" control
 3. Drag a *SetValue* action into the *CloseModalButton.Click* eventhandler
    1. Set the Target property to: *ModalBackgroundContainer.visible*
    2. Set the Value property to: *false*
 
-## StyleSheet CSS
-1. Open the CSS file called *modal-variables.css* from this repo in an editor of your choice (I recommend [VS Code](https://code.visualstudio.com/))
+## Customising the popup
+The *modal-variables.css* file included in this repo contains a set of variables that can be changed to customise the modal popup. Follow the steps below to create a custom popup implementation 
+1. Open the CSS file called [*modal-variables.css*](modal-variables.css) from this repo in an editor of your choice (I recommend [VS Code](https://code.visualstudio.com/))
 2. Adjust the variables in the *:root* element as you see fit
 
 ## Applying the CSS
 How to apply the CSS to your application
+1. Add the two CSS files from this repo [*modal-variables.css*](modal-variables.css) and [*modal.css*](modal.css) to the Embedded Files folder in your application
 
 ### Stadium 6 (versions 6.6 and above)
-1. Add the two CSS files to the Embedded Files of your application
 2. Paste the link tags below into the *head* property of your application
 ```
 <link rel="stylesheet" href="{EmbeddedFiles}/modal.css">
@@ -48,8 +49,8 @@ How to apply the CSS to your application
 ``` 
 
 ### Stadium 5
-1. Add a Javascript action into the Page.load event handler 
-2. Paste the Javascript below into the Javascript action Code Editor popup
+2. Add a Javascript action into the Page.load event handler 
+3. Paste the Javascript below into the Javascript action Code Editor popup
 ```
 let URL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname + "//";
 let el1 = document.createElement("link");
