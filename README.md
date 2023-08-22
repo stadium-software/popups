@@ -41,14 +41,14 @@ The *modal-variables.css* file included in this repo contains a set of variables
 How to apply the CSS to your application
 1. Add the two CSS files from this repo [*modal-variables.css*](modal-variables.css) and [*modal.css*](modal.css) to the Embedded Files folder in your application
 
-### Stadium 6 (versions 6.6 and above)
+#### Stadium 6 (versions 6.6 and above)
 2. Paste the link tags below into the *head* property of your application
 ```
 <link rel="stylesheet" href="{EmbeddedFiles}/modal.css">
 <link rel="stylesheet" href="{EmbeddedFiles}/modal-variables.css">
 ``` 
 
-### Stadium 5
+#### Stadium 5
 2. Add a Javascript action into the Page.load event handler 
 3. Paste the Javascript below into the Javascript action Code Editor popup
 ```
