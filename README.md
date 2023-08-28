@@ -21,16 +21,18 @@ https://github.com/stadium-software/ModalContents/assets/2085324/215c2899-b09f-4
 6. Drag any controls you wish to display into the ModalContent into the control named "ModalContentContainer"
 
 ## EventHandler Setup
-1. Drag a *Button* or *Link* control to the page and name it "OpenModalButton"
-2. Add a *Click* eventhandler to the "OpenModalButton" control
-3. Drag a *SetValue* action into the *OpenModalButton.Click* eventhandler
-   1. Set the Target property to: *ModalBackgroundContainer.visible*
-   2. Set the Value property to: *true*
-4. Drag a *Button* or *Link* control into the "ModalContentContainer" control and name it "CloseModalButton"
-2. Add a *Click* eventhandler to the "CloseModalButton" control
-3. Drag a *SetValue* action into the *CloseModalButton.Click* eventhandler
-   1. Set the Target property to: *ModalBackgroundContainer.visible*
-   2. Set the Value property to: *false*
+1. Drag a *Button* or *Link* control to the page and name it "ModalShowButton"
+2. Add a *Click* eventhandler to the "ModalShowButton" control
+3. Drag a *SetValue* action into the *ModalShowButton.Click* eventhandler
+   1. Name the SetValue "ShowPopup"
+   2. Set the Target property to: *ModalBackgroundContainer.visible*
+   3. Set the Value property to: *true*
+4. Drag a *Button* or *Link* control into the "ModalContentContainer" control and name it "ModalCloseButton"
+5. Add a *Click* eventhandler to the "ModalCloseButton" control
+6. Drag a *SetValue* action into the *ModalCloseButton.Click* eventhandler
+   1. Name the SetValue "HidePopup"
+   2. Set the Target property to: *ModalBackgroundContainer.visible*
+   3. Set the Value property to: *false*
 
 ## Customising the popup
 The *modal-variables.css* file included in this repo contains a set of variables that can be changed to customise the modal popup. Follow the steps below to create a custom popup implementation 
