@@ -7,7 +7,7 @@ Modal popups serve to focus the attention of users on a particular UI element. T
 https://github.com/stadium-software/ModalContents/assets/2085324/215c2899-b09f-4286-b412-cde8be4a72c8
 
 ## Version
-1.0
+1.1 (I now recommend to create a CSS folder in your EmbeddedFiles folder to house the CSS files from this repo)
 
 ## Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
@@ -41,13 +41,14 @@ The *modal-variables.css* file included in this repo contains a set of variables
 
 ## Applying the CSS
 How to apply the CSS to your application
-1. Add the two CSS files from this repo [*modal-variables.css*](modal-variables.css) and [*modal.css*](modal.css) to the Embedded Files folder in your application
+1. Create a folder called *CSS* inside of your Embedded Files in your application
+2. Drag the two CSS files from this repo [*modal-variables.css*](modal-variables.css) and [*modal.css*](modal.css) into that folder
 
 #### Stadium 6 (versions 6.6 and above)
 2. Paste the link tags below into the *head* property of your application
 ```
-<link rel="stylesheet" href="{EmbeddedFiles}/modal.css">
-<link rel="stylesheet" href="{EmbeddedFiles}/modal-variables.css">
+<link rel="stylesheet" href="{EmbeddedFiles}/CSS/modal.css">
+<link rel="stylesheet" href="{EmbeddedFiles}/CSS/modal-variables.css">
 ``` 
 
 #### Stadium 5
