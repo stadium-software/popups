@@ -58,11 +58,11 @@ How to apply the CSS to your application
 let URL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname + "//";
 let el1 = document.createElement("link");
 el1.setAttribute("rel","stylesheet");
-el1.setAttribute("href",URL + "Content/EmbeddedFiles/modal.css");
+el1.setAttribute("href",URL + "Content/EmbeddedFiles/CSS/modal.css");
 document.querySelector("head").appendChild(el1);
 let el2 = document.createElement("link");
 el2.setAttribute("rel","stylesheet");
-el2.setAttribute("href",URL + "Content/EmbeddedFiles/modal-variables.css");
+el2.setAttribute("href",URL + "Content/EmbeddedFiles/CSS/modal-variables.css");
 document.querySelector("head").appendChild(el2);
 ``` 
 
