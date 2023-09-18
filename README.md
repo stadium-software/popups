@@ -4,9 +4,7 @@ This module contains three different modal popup variations. Additionally, it de
 ## Description
 Modal popups serve to focus the attention of users on a particular UI element. This is done to allow the users to focus on a specific task. Such popups are most appropriate for subtasks, such as adding or updating table rows and returning users back to the previous view. 
 
-
-https://github.com/stadium-software/popups/assets/2085324/33c1ec7d-1412-4dcb-8a4b-905645e23c5e
-
+https://github.com/stadium-software/popups/assets/2085324/1a071448-f4c1-41bd-abbc-5bb75cd3c28c
 
 ## Version
 2.0
