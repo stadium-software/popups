@@ -81,7 +81,7 @@ The full-page popup with background is essentially the same as the full-page pop
 1. Create a folder called JS in the EmbeddedFiles
 2. Drag the html2canvas.min.js library file into the folder
 3. Add the link below to the *Head* property of the application
-```
+```html
 <script src="{EmbeddedFiles}/JS/html2canvas.min.js"></script>
 ```
 4. In the application properties panel, open the *Variables* property to add a session variable to the application
@@ -91,7 +91,7 @@ The full-page popup with background is essentially the same as the full-page pop
    1. Drag a Javascript action into the script and place it above the NavigateToPage action
    2. Call the Javascript action "CreatePageScreenshot_JS"
    3. Paste the Javascript below into the Code property
-```
+```javascript
 let img = html2canvas(document.body).then((canvas) => {
    return canvas.toDataURL("image/png");
 });
@@ -104,7 +104,7 @@ return img;
 10. In the popup Page.Load event handler
    1. Drag a Javascript action into the script and call it "SetPageBG_JS"
    2. Paste the Javascript below into the Code property
-```
+```javascript
 let bgColor = getComputedStyle(document.documentElement).getPropertyValue('--modal-background-background-color');
 document.querySelector(".custom-modal-background").setAttribute("style", "background-image: linear-gradient(" + bgColor + ", " + bgColor + "), url('"+ Session.Variables.bgImage +"'); background-size: contain; background-repeat: no-repeat; background-position: top center;");
 ```
@@ -118,7 +118,7 @@ Sometimes, it is useful to allow users to click the backdrop to close a modal po
    1. Set the *Target* property to *ModalBackgroundContainer.Visible*
    2. Set the *Value* property to *false*
 3. In the *ModalShowButton.Click* event, drag a Javascript action into the script and add the Javascript below into the *Code* property
-```
+```javascript
 var th = this;
 document.querySelector(".custom-modal-background").addEventListener("click", toggleEventListener);
 function toggleEventListener(e) {
@@ -141,7 +141,7 @@ How to apply the CSS to your application
 
 #### Stadium 6 (versions 6.6 and above)
 2. Paste the link tags below into the *head* property of your application
-```
+```html
 <link rel="stylesheet" href="{EmbeddedFiles}/CSS/modal.css">
 <link rel="stylesheet" href="{EmbeddedFiles}/CSS/modal-variables.css">
 ``` 
