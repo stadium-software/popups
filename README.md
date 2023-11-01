@@ -57,7 +57,7 @@ The in-page popup shows and hides a container on the page as the buttons are cli
 <hr>
 
 ## FullPage Popup
-The full-page popup method makes complete pages appear to be popups. These pages use a Template that applies to popup styling to any page. Since Stadium 6 generates a single-page application, no pages are downloaded when users navigate between pages and it is not immediately apparent to the application user that they have navigated to another page. The only difference between this method and an in-page popup is that the opening page is not visible in the background of the popup page. Considering that users cannot interact and do not need the background page, this method has the significant advantage that there are significantly fewer elements to consider when developing a page. 
+The full-page popup method makes complete pages appear to be popups. These pages use a Template that applies to popup styling to any page. Since Stadium 6 generates a single-page application, no pages are downloaded when users navigate between pages and it is not immediately apparent to the application user that they have navigated to another page. The only difference between this method and an in-page popup is that the opening page is not visible in the background of the popup page. Considering that users cannot interact and do not need the background page, this method has the **significant** advantage that there are fewer elements to consider when developing a page. 
 
 ### Setup
 1. Create a new template and name it "PopupTemplate"
