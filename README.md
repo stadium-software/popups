@@ -110,7 +110,7 @@ return img;
    2. Paste the Javascript below into the Code property
 ```javascript
 let bgColor = getComputedStyle(document.documentElement).getPropertyValue('--modal-background-background-color');
-document.querySelector(".custom-modal-background").setAttribute("style", "background-image: linear-gradient(" + bgColor + ", " + bgColor + "), url('"+ Session.Variables.bgImage +"'); background-size: contain; background-repeat: no-repeat; background-position: top center;");
+document.querySelector(".custom-modal-background").setAttribute("style", "background-image: linear-gradient(" + bgColor + ", " + bgColor + "), url('"+ Session.Variables.bgImage +"'); background-size: cover; background-repeat: no-repeat; background-position: top center;");
 ```
 
 ## Dismiss Click
