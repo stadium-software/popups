@@ -25,8 +25,7 @@ This repo contains one Stadium 6.7 application
 
 1. [In-Page Popup](#in-page-popup)
 2. [FullPage Popup](#fullpage-popup)
-3. [FullPage Popup With background](#fullpage-popup-with-background)
-4. [Dismiss Click](#dismiss-click)
+3. [Dismiss Click](#dismiss-click)
 
 <hr>
 
@@ -58,7 +57,7 @@ The in-page popup shows and hides a container on the page as the buttons are cli
 <hr>
 
 ## FullPage Popup
-The full-page popup method makes complete pages appear to be popups. These pages use a Template that applies to popup styling to any page. Since Stadium 6 generates a single-page application, no pages are downloaded when users navigate between pages and it is not immediately apparent to the application user that they have navigated to another page. The only difference between this method and an in-page popup is that the opening page is not visible in the background of the popup page.
+The full-page popup method makes complete pages appear to be popups. These pages use a Template that applies to popup styling to any page. Since Stadium 6 generates a single-page application, no pages are downloaded when users navigate between pages and it is not immediately apparent to the application user that they have navigated to another page. The only difference between this method and an in-page popup is that the opening page is not visible in the background of the popup page. Considering that users cannot interact and do not need the background page, this method has the significant advantage that there are significantly fewer elements to consider when developing a page. 
 
 ### Setup
 1. Create a new template and name it "PopupTemplate"
@@ -75,43 +74,6 @@ The full-page popup method makes complete pages appear to be popups. These pages
 Navigate to a popup page to make it appear as if the popup was opened. 
 
 Navigate away from a popup page (usually back to the opening page) to make it appear as if the popup was closed. 
-
-<hr>
-
-## FullPage Popup With Background
-The full-page popup with background is essentially the same as the full-page popup, with the exception that a Javascript library called html2canvas is used to take a screenshot of the opening page. That screenshot is then used to make it appear as if the opening page is in the background of the popup page. This screenshot will, however, distort if the viewport size is changed while user views the popup page. 
-
-### Setup
-1. Create a folder called JS in the EmbeddedFiles
-2. Drag the html2canvas.min.js library file into the folder
-3. Add the link below to the *Head* property of the application
-```html
-<script src="{EmbeddedFiles}/JS/html2canvas.min.js"></script>
-```
-4. In the application properties panel, open the *Variables* property to add a session variable to the application
-5. Add a variable called "bgImage" to the application
-6. Create a "PopupTemplate" as above
-7. Open the the event hander that navigates the user to the popup page (e.g. the button click event handler)
-   1. Drag a Javascript action into the script and place it above the NavigateToPage action
-   2. Call the Javascript action "CreatePageScreenshot_JS"
-   3. Paste the Javascript below into the Code property
-```javascript
-let img = html2canvas(document.body).then((canvas) => {
-   return canvas.toDataURL("image/png");
-});
-return img;
-```
-8. You can ignore the error that appears in the validation panel "Invalid script was detected"
-9. Drag a SetValue action directly below the "CreatePageScreenshot_JS" action
-   1. Set the target property to *Session.Variables.bgimage*
-   2. Set the *Value* property to the return value of the "CreatePageScreenshot_JS" action (~.CreatePageScreenshot_JS)
-10. In the popup Page.Load event handler
-   1. Drag a Javascript action into the script and call it "SetPageBG_JS"
-   2. Paste the Javascript below into the Code property
-```javascript
-let bgColor = getComputedStyle(document.documentElement).getPropertyValue('--modal-background-background-color');
-document.querySelector(".custom-modal-background").setAttribute("style", "background-image: linear-gradient(" + bgColor + ", " + bgColor + "), url('"+ Session.Variables.bgImage +"'); background-size: cover; background-repeat: no-repeat; background-position: top center;");
-```
 
 ## Dismiss Click
 Sometimes, it is useful to allow users to click the backdrop to close a modal popup. The dismiss click is quickly and easily performed, which can lead to accidental popup closures. Use this method only when closing the popup by accident does not represent a significant annoyance to the user. 
