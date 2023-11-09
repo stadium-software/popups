@@ -81,7 +81,7 @@ To show the opening page in the background, we can create an iframe element and 
 1. Create a [FullPage Popup](#fullpage-popup) as above
 
 ## Opening Event Handler Setup
-1. Drag a *Javascript* action into an event handler in the opening page - the handler that navigates the user to the popup page, just before the *NavigateToPage* action
+1. Drag a *Javascript* action into an event handler in the opening page (the event handler that navigates the user to the popup page)
 2. Enter the Javascript below into the *Code* property 
 ```javascript
 let iframe = document.querySelector(".iframe-background");
