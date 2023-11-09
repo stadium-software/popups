@@ -4,7 +4,7 @@ This module contains three different modal popup variations. Additionally, it de
 ## Description
 Modal popups serve to focus the attention of users on a particular UI element. This is done to allow the users to focus on a specific task. Such popups are most appropriate for subtasks, such as adding or updating table rows and returning users back to the previous view. 
 
-https://github.com/stadium-software/popups/assets/2085324/1a071448-f4c1-41bd-abbc-5bb75cd3c28c
+https://github.com/stadium-software/popups/assets/2085324/7d0fd050-3994-4c9e-99ff-80147be1783f
 
 ## Sample applications
 This repo contains one Stadium 6.7 application
@@ -14,7 +14,7 @@ This repo contains one Stadium 6.7 application
 2.0
 
 ## Change log
-2.0 Added full-page popup and full-page with background popup. Removed Stadium 5 sample. 
+2.0 Added full-page popup and full-page popup with background page in an iFrame. Removed Stadium 5 sample. 
 
 <hr>
 
