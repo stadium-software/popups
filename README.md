@@ -81,7 +81,7 @@ To show the opening page in the background, we can create an iframe element and 
 1. Create a [FullPage Popup](#fullpage-popup) as above
 
 ## Opener Page.Load Setup
-1. Drag a *Javascript* action into the event handler of the opening page (the one that navigates the user to the popup page, just before the *NavigateToPage* action)
+1. Drag a *Javascript* action into an event handler in the opening page - the handler that navigates the user to the popup page, just before the *NavigateToPage* action
 2. Enter the Javascript below into the *Code* property 
 ```javascript
 let iframe = document.querySelector(".iframe-background");
@@ -93,6 +93,8 @@ if (!iframe) {
 iframe.src = window.location.href;
 ```
 
+![](images/PopupShow-WBackground.png)
+
 ## Template.Load Event Setup
 1. Drag a *Javascript* action into the page.load event handlers of all templates in your application, except for the popup template ("PopupTemplate")
 3. Enter the Javascript below into the *Code* property 
@@ -100,6 +102,8 @@ iframe.src = window.location.href;
 let iframe = document.querySelector(".iframe-background");
 if (iframe) document.querySelector(".iframe-background").remove();
 ```
+
+![](images/PopupClose-WBackground.png)
 
 # Dismiss Click
 Sometimes, it is useful to allow users to click the backdrop to close a modal popup. The dismiss click is quickly and easily performed, which can lead to accidental popup closures. Use this method only when closing the popup by accident does not represent a significant annoyance to the user. 
