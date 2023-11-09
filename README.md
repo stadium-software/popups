@@ -8,7 +8,7 @@ https://github.com/stadium-software/popups/assets/2085324/1a071448-f4c1-41bd-abb
 
 ## Sample applications
 This repo contains one Stadium 6.7 application
-[ModalPopups.sapz](Stadium6/ModalPopups.sapz?raw=true)
+[ModalPopups_v2.0.sapz](Stadium6/ModalPopups_v2.0.sapz?raw=true)
 
 ## Version
 2.0
@@ -25,14 +25,15 @@ This repo contains one Stadium 6.7 application
 
 1. [In-Page Popup](#in-page-popup)
 2. [FullPage Popup](#fullpage-popup)
-3. [Dismiss Click](#dismiss-click)
+3. [FullPage Popup With Background Page](#fullpage-popup-with-background-page)
+4. [Dismiss Click](#dismiss-click)
 
 <hr>
 
-## In-Page Popup 
+# In-Page Popup 
 The in-page popup shows and hides a container on the page as the buttons are clicked. You can use this method when you have smaller pages with few elements. 
 
-### Setup
+## Setup
 1. Drag a *Container* control to a page and name it "ModalBackgroundContainer"
 2. Add a class called "custom-modal-background" to the "ModalBackgroundContainer" control *Classes* property 
 3. Set the *Visible* property of the "ModalBackgroundContainer" control to "false"
@@ -40,7 +41,7 @@ The in-page popup shows and hides a container on the page as the buttons are cli
 5. Add a class called "custom-modal-content" to the "ModalContentContainer" control *Classes* property 
 6. Drag any controls you wish to display into the ModalContent into the control named "ModalContentContainer"
 
-### EventHandler
+## EventHandler
 1. Drag a *Button* or *Link* control to the page and name it "ModalShowButton"
 2. Add a *Click* eventhandler to the "ModalShowButton" control
 3. Drag a *SetValue* action into the *ModalShowButton.Click* eventhandler
@@ -54,12 +55,10 @@ The in-page popup shows and hides a container on the page as the buttons are cli
    2. Set the Target property to: *ModalBackgroundContainer.visible*
    3. Set the Value property to: *false*
 
-<hr>
+# FullPage Popup
+The full-page popup method makes complete pages appear to be popups. These pages use a Template that applies to popup styling to any page. This method has the advantage that the application developer can focus on the popup page development without having to deal with the rest of the page. This means that development can be faster and simpler. The only difference between this method and an in-page popup is that the opening page is not visible to the end user in the background of the popup page. If this feature is important to you, you can try the [FullPage Popup With Background Page](#fullpage-popup-with-background-page) method below. 
 
-## FullPage Popup
-The full-page popup method makes complete pages appear to be popups. These pages use a Template that applies to popup styling to any page. Since Stadium 6 generates a single-page application, no pages are downloaded when users navigate between pages and it is not immediately apparent to the application user that they have navigated to another page. The only difference between this method and an in-page popup is that the opening page is not visible in the background of the popup page. Considering that users cannot interact and do not need the background page, this method has the **significant** advantage that there are fewer elements to consider when developing a page. 
-
-### Setup
+## Setup
 1. Create a new template and name it "PopupTemplate"
 2. Drag a *Container* control into the "PopupTemplate" and name it "ModalBackgroundContainer"
 3. Add a class called "custom-modal-background" to the "ModalBackgroundContainer" control *Classes* property 
@@ -70,12 +69,37 @@ The full-page popup method makes complete pages appear to be popups. These pages
 
 ![](images/PopupTemplateView.png)
 
-### Opening and closing a FullPage Popup
+## Opening and closing a FullPage Popup
 Navigate to a popup page to make it appear as if the popup was opened. 
 
 Navigate away from a popup page (usually back to the opening page) to make it appear as if the popup was closed. 
 
-## Dismiss Click
+# FullPage Popup With Background Page
+To show the opening page in the background, we can create an iframe element and load the opening page into it. To accomplish this, we need to create a FullPage Popup as above and then add two scripts. One that creates the iframe element when the user is navigated to the popup page and another to remove the iframe element when the user is navigated away from the popup page again. 
+
+## Opener Page Setup
+1. Create a [FullPage Popup](#fullpage-popup) as above
+2. Drag a *Javascript* action into the event handler that navigates the user to the popup page
+3. Enter the Javascript below into the *Code* property 
+```javascript
+let iframe = document.querySelector(".iframe-background");
+if (!iframe) {
+	iframe = document.createElement("iframe");
+	document.body.appendChild(iframe);
+	iframe.classList.add("iframe-background");
+}
+iframe.src = window.location.href;
+```
+
+## Popup Page Setup
+1. Drag a *Javascript* action into the event handler that navigates the user away from the popup page
+3. Enter the Javascript below into the *Code* property 
+```javascript
+let iframe = document.querySelector(".iframe-background");
+if (iframe) document.querySelector(".iframe-background").remove();
+```
+
+# Dismiss Click
 Sometimes, it is useful to allow users to click the backdrop to close a modal popup. The dismiss click is quickly and easily performed, which can lead to accidental popup closures. Use this method only when closing the popup by accident does not represent a significant annoyance to the user. 
 
 ### Setup
@@ -94,6 +118,8 @@ function toggleEventListener(e) {
 	}
 }
 ```
+
+# Styling
 
 ## Customising the popup
 The *modal-variables.css* file included in this repo contains a set of variables that can be changed to customise the modal popup. Follow the steps below to create a custom popup implementation 
