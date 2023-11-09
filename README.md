@@ -95,7 +95,7 @@ iframe.src = window.location.href;
 
 ![](images/PopupShow-WBackground.png)
 
-## Template.Load Event Setup
+## Templates Page.Load Event Setup
 1. Drag a *Javascript* action into the page.load event handlers of all templates in your application, **except** for the popup template ("PopupTemplate")
 3. Enter the Javascript below into the *Code* property 
 ```javascript
