@@ -129,6 +129,8 @@ function toggleEventListener(e) {
 }
 ```
 
+![](images/DismissClickScript.png)
+
 # Styling
 
 ## Customising the popup
