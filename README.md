@@ -81,9 +81,9 @@ To show the opening page in the background, we can create an iframe element and 
 1. Create a [FullPage Popup](#fullpage-popup) as above
 
 ## Opening Event Handler Setup
-The iFrame must be appended to the page **before** the user is navigated to the popup page. 
+The iFrame must be appended **before** the user is navigated to the popup page. 
 
-1. Drag a *Javascript* action into an event handler in the opening page (the event handler that navigates the user to the popup page)
+1. Drag a *Javascript* action into an event handler in the opening page (before the *NavigateToPage* action in the event handler that navigates the user to the popup page)
 2. Enter the Javascript below into the *Code* property 
 ```javascript
 let iframe = document.querySelector(".iframe-background");
@@ -98,13 +98,13 @@ iframe.src = window.location.href;
 ![](images/PopupShow-WBackground.png)
 
 ## Templates Page.Load Event Setup
-The iFrame needs to be removed from the DOM when the user navigates away from the popup page. 
+The iFrame needs to be removed from the DOM when the user navigates away from the popup page. To achieve this we need to add a script to each template **except** for the popup template
 
 1. Drag a *Javascript* action into the page.load event handlers of all templates in your application, **except** for the popup template ("PopupTemplate")
 3. Enter the Javascript below into the *Code* property 
 ```javascript
 let iframe = document.querySelector(".iframe-background");
-if (iframe) document.querySelector(".iframe-background").remove();
+if (iframe) iframe.remove();
 ```
 
 ![](images/PopupClose-WBackground.png)
