@@ -65,7 +65,7 @@ The full-page popup method makes complete pages appear to be popups. These pages
 4. Drag a container inside the "ModalBackgroundContainer" control and name it "ModalContentContainer"
 5. Add a class called "custom-modal-content" to the "ModalContentContainer" control *Classes* property 
 6. Drag the *PageContentPlaceholder* into the "ModalBackgroundContainer" control
-7. Assign the "PopupTemplate" to pages to make them appear to be popups
+7. In the Page Properties, assign the "PopupTemplate" to pages to make them appear to be popups
 
 ![](images/PopupTemplateView.png)
 
@@ -79,8 +79,10 @@ To show the opening page in the background, we can create an iframe element and 
 
 ## Opener Page Setup
 1. Create a [FullPage Popup](#fullpage-popup) as above
-2. Drag a *Javascript* action into the event handler that navigates the user to the popup page
-3. Enter the Javascript below into the *Code* property 
+
+## Opener Page.Load Setup
+1. Drag a *Javascript* action into the event handler of the opening page (the one that navigates the user to the popup page, just before the *NavigateToPage* action)
+2. Enter the Javascript below into the *Code* property 
 ```javascript
 let iframe = document.querySelector(".iframe-background");
 if (!iframe) {
@@ -91,8 +93,8 @@ if (!iframe) {
 iframe.src = window.location.href;
 ```
 
-## Popup Page Setup
-1. Drag a *Javascript* action into the event handler that navigates the user away from the popup page
+## Template.Load Event Setup
+1. Drag a *Javascript* action into the page.load event handlers of all templates in your application, except for the popup template ("PopupTemplate")
 3. Enter the Javascript below into the *Code* property 
 ```javascript
 let iframe = document.querySelector(".iframe-background");
