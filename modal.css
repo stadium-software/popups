@@ -21,7 +21,7 @@ html {
         background-color: var(--modal-content-background-color, #ffffff);
         border-radius: 6px;
         border: 1px solid var(--modal-content-border-color, #2196f3);
-        padding: 20px;
+        padding: var(--modal-content-top-padding) var(--modal-content-right-padding) var(--modal-content-bottom-padding) var(--modal-content-left-padding);
         box-shadow: var(--modal-content-shadow-color, rgba(0, 0, 0, 0.45)) 0px 5px 15px;
         overflow: auto;
         max-height: calc(96vh - var(--modal-content-pixels-from-top, 0));

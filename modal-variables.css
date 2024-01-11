@@ -8,4 +8,9 @@
     --modal-content-shadow-color: rgba(0, 0, 0, 0.45);
     --modal-content-alignment: start; /*start or center*/
     --modal-content-pixels-from-top: 40px; /*This will only work if the --modal-content-alignment variable is set to 'start'*/
+
+    --modal-content-top-padding: 20px;
+    --modal-content-right-padding: 20px;
+    --modal-content-bottom-padding: 20px;
+    --modal-content-left-padding: 20px;
 }
