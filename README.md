@@ -151,4 +151,4 @@ How to apply the CSS to your application
 ``` 
 
 ## CSS Upgrading
-To upgrade thje CSS in this module, follow the [steps outlined in this repo](https://github.com/stadium-software/samples-upgrading)
+To upgrade the CSS in this module, follow the [steps outlined in this repo](https://github.com/stadium-software/samples-upgrading)
