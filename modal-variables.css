@@ -1,6 +1,5 @@
-/*Adjust these variables to customise the popup*/
+/* CSS version 2.0 https: //github.com/stadium-software/popups */
 :root {
-    /*Version 1.0*/
     --modal-background-background-color: rgba(0, 0, 0, 0.5);
     
     --modal-content-background-color: #ffffff;

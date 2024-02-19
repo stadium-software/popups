@@ -83,7 +83,7 @@ The iFrame must be appended **before** the user is navigated to the popup page.
 1. Drag a *Javascript* action into an event handler in the opening page (before the *NavigateToPage* action in the event handler that navigates the user to the popup page)
 2. Enter the Javascript below into the *Code* property 
 ```javascript
-/* Stadium Script Version 2.1 */
+/* Stadium Script Version 2.1 https://github.com/stadium-software/popups */
 let iframe = document.querySelector(".iframe-background");
 if (!iframe) {
 	iframe = document.createElement("iframe");
@@ -101,7 +101,7 @@ The iFrame needs to be removed from the DOM when the user navigates away from th
 1. Drag a *Javascript* action into the page.load event handlers of all templates in your application, **except** for the popup template ("PopupTemplate")
 3. Enter the Javascript below into the *Code* property 
 ```javascript
-/* Stadium Script Version 2.1 */
+/* Stadium Script Version 2.1 https://github.com/stadium-software/popups */
 let iframe = document.querySelector(".iframe-background");
 if (iframe) iframe.remove();
 ```
@@ -118,7 +118,7 @@ Sometimes, it is useful to allow users to click the backdrop to close a modal po
    2. Set the *Value* property to *false*
 3. In the *ModalShowButton.Click* event, drag a Javascript action into the script and add the Javascript below into the *Code* property
 ```javascript
-/* Stadium Script Version 2.1 */
+/* Stadium Script Version 2.1 https://github.com/stadium-software/popups */
 var th = this;
 document.querySelector(".custom-modal-background").addEventListener("click", toggleEventListener);
 function toggleEventListener(e) {
