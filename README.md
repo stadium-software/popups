@@ -38,10 +38,12 @@ The in-page popup shows and hides a container on the page as the buttons are cli
 5. Add a class called "custom-modal-content" to the "ModalContentContainer" control *Classes* property 
 6. Drag any controls you wish to display into the ModalContent into the control named "ModalContentContainer"
 
+![](images/BasicSetup.png)
+
 ## EventHandler
-1. Drag a *Button* or *Link* control to the page and name it "ModalShowButton"
-2. Add a *Click* eventhandler to the "ModalShowButton" control
-3. Drag a *SetValue* action into the *ModalShowButton.Click* eventhandler
+1. Drag a *Button* or *Link* control to the page  and name it "ModalShowButton" or add a "Click" event handler to a DataGrid column
+2. Add a *Click* Event Handler to the "ModalShowButton" control (not needed for DataGrid columns)
+3. Drag a *SetValue* action into the Event Handler
    1. Name the SetValue "ShowPopup"
    2. Set the Target property to: *ModalBackgroundContainer.visible*
    3. Set the Value property to: *true*
