@@ -18,7 +18,7 @@ html {
         display: inline-block;
         margin-top: var(--modal-content-pixels-from-top, 60px);
         background-color: var(--modal-content-background-color, #ffffff);
-        border-radius: 6px;
+        border-radius: var(--modal-content-border-radius);
         border: 1px solid var(--modal-content-border-color, #2196f3);
         padding: var(--modal-content-top-padding) var(--modal-content-right-padding) var(--modal-content-bottom-padding) var(--modal-content-left-padding);
         box-shadow: var(--modal-content-shadow-color, rgba(0, 0, 0, 0.45)) 0px 5px 15px;
