@@ -1,10 +1,8 @@
-/* CSS version 2.0 https: //github.com/stadium-software/popups */
 :root {
     --modal-background-background-color: rgba(0, 0, 0, 0.5);
     
     --modal-content-background-color: #ffffff;
     --modal-content-border-color: #2196f3;
-    --modal-content-border-radius: 6px;
     --modal-content-shadow-color: rgba(0, 0, 0, 0.45);
     --modal-content-alignment: start; /*start or center*/
     --modal-content-pixels-from-top: 40px; /*This will only work if the --modal-content-alignment variable is set to 'start'*/
