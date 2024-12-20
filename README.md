@@ -6,10 +6,6 @@ Modal popups serve to focus the attention of users on a particular UI element. T
 
 https://github.com/stadium-software/popups/assets/2085324/7d0fd050-3994-4c9e-99ff-80147be1783f
 
-## Sample applications
-This repo contains one Stadium 6.7 application
-[ModalPopups_v2.0.sapz](Stadium6/ModalPopups_v2.0.sapz?raw=true)
-
 ## Version
 2.0 - Added full-page popup and full-page popup with background page in an iFrame. Removed Stadium 5 sample. 
 
