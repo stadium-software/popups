@@ -15,14 +15,14 @@ html {
     /*The popup window*/
     .custom-modal-content {
         display: inline-block;
-        margin-top: var(--modal-content-pixels-from-top, 60px);
+        margin-top: var(--modal-content-pixels-from-top, 6rem);
         background-color: var(--modal-content-background-color, var(--BODY-BACKGROUND-COLOR));
         border-radius: 6px;
         border: 1px solid var(--modal-content-border-color, var(--GENERAL-BORDER-COLOR));
         padding: var(--modal-content-top-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING)) var(--modal-content-right-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING)) var(--modal-content-bottom-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING)) var(--modal-content-left-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING));
-        box-shadow: var(--modal-content-shadow-color, var(--BOX-SHADOW-COLOR)) 0px 5px 15px;
+        box-shadow: var(--modal-content-shadow-color, var(--BOX-SHADOW-COLOR)) 0 0.5rem 1.5rem;
         overflow: auto;
-        max-height: calc(96vh - var(--modal-content-pixels-from-top, var(--BODY-CONTAINER-RIGHTLEFT-PADDING)));
+        max-height: calc(96vh - var(--modal-content-pixels-from-top, 6rem) - var(--BODY-FOOTER-HEIGHT));
         max-width: 96vw;
         z-index: 1001;
     }
@@ -31,7 +31,7 @@ html {
         z-index: -1;
         height: 100vh;
         width: 100vw;
-        top: -2px;
-        left: -2px;
+        top: -0.2rem;
+        left: -0.2rem;
     }
 }
