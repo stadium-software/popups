@@ -53,7 +53,7 @@ The in-page popup shows and hides a container on the page as the buttons are cli
    2. Set the Value property to: *true* to show a popup or to *false* to hide it
 
 # FullPage Popup
-The full-page popup method makes complete pages appear to be popups. These pages use a Template that applies to popup styling to any page. This method has the advantage that the application developer can focus on the popup page development without having to deal with the rest of the page. This means that development can be faster and simpler. The only difference between this method and an in-page popup is that the opening page is not visible to the end user in the background of the popup page.
+The full-page popup method makes complete pages appear to be popups. These pages use a Template that is styled to appear to be a popup. Use this method when pages become difficult to develop or maintain. 
 
 ## Setup
 1. Create a new template and name it "PopupTemplate"
