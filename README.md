@@ -180,7 +180,7 @@ function attachHeaderClose(el) {
    1. DismissOnClick (boolean): Add *false* to disable closing popups by clicking on the background (default true)
    2. DismissOnEscape (boolean): Add *false* to disable closing popups by pressing the escape key (default true)
    3. HeaderCloseIcon (boolean): Add *false* to hide the X icon in the top right corner of the popup (default true)
-   4. CallbackOnClose (string): Add a page script and provide it's name here to call the script when the popup is closed using the dismiss click, escape key or the closer icon. This is necessary when using the Full-Page popup method described above so users can be redirected to the opener page when the popup is closed by the user. 
+   4. CallbackOnClose (string): Add a page script and provide it's name here to call the script when the popup is closed using the dismiss click, escape key or the closer icon. 
 
 # CSS
 The CSS below is required for the correct functioning of the module. Variables exposed in the [*popup-variables.css*](popup-variables.css) file can be [customised](#customising-css).
