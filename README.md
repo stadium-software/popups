@@ -2,9 +2,9 @@
 This module provides two methods for creating popups, in-page and full-page. 
 
 ## Description
-Modal popups serve to focus the attention of users on a particular UI element. This is done to allow the users to focus on a specific task. Such popups are most appropriate for subtasks, such as adding or updating table rows and returning users back to the previous view. 
+Popups serve to focus the attention of users on a particular set of UI elements. Popups are most appropriate for subtasks, such as adding or updating table rows before returning users back to the previous view. 
 
-https://github.com/stadium-software/popups/assets/2085324/7d0fd050-3994-4c9e-99ff-80147be1783f
+![](images/view.gif)
 
 ## Contents <!-- omit in toc -->
 - [Version](#version)
