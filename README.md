@@ -182,6 +182,8 @@ function attachHeaderClose(el) {
    3. HeaderCloseIcon (boolean): Add *false* to hide the X icon in the top right corner of the popup (default true)
    4. CallbackOnClose (string): Add a page script and provide it's name here. The script will be called when the popup is closed using the dismiss click, escape key or the closer icon. 
 
+![](images/ScriptParameters.png)
+
 ![](images/CallBackScript.png)
 
 # CSS
