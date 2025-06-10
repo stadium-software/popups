@@ -60,7 +60,7 @@ The full-page popup method makes complete pages appear to be popups. These pages
 2. Drag a *Container* control into the "PopupTemplate"
 3. Add a class called "stadium-popup" to the *Container* control *Classes* property 
 4. Drag the *PageContentPlaceholder* into the *Container* control
-5. In the Page Properties of popup pages, assign the "PopupTemplate" to make them appear as popups
+5. Assign the "PopupTemplate" to pages to make them appear as popups
 
 ![](images/PopupTemplateView.png)
 
