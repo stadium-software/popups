@@ -7,7 +7,7 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 ![](images/view.gif)
 
 ## Overview
-1. Add a *Container*
+1. Add a *Container* control to a page
 2. Assign the class "stadium-popup" to the *Container*
 3. Set the *Visible* property to *false*
 4. Include the CSS for the module
