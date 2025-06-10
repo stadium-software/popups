@@ -7,9 +7,21 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 ![](images/view.gif)
 
 ## Contents <!-- omit in toc -->
-- [Version](#version)
 - [Application Setup](#application-setup)
 - [In-Page Popup](#in-page-popup)
+   - [Setup](#setup)
+   - [EventHandler](#eventhandler)
+- [FullPage Popup](#fullpage-popup)
+   - [Setup](#setup-1)
+   - [Opening and Closing FullPage Popups](#opening-and-closing-fullpage-popups)
+- [Dismiss Click, Escape Button Close, Closer (X) Display and Popup Headers](#dismiss-click-escape-button-close-closer-x-display-and-popup-headers)
+   - [Global Script](#global-script)
+   - [Page.Load](#pageload)
+   - [CSS](#css)
+   - [Before v6.12](#before-v612)
+   - [v6.12+](#v612)
+   - [Customising CSS](#customising-css)
+- [Upgrading Stadium Repos](#upgrading-stadium-repos)
 
 # Version
 3.0 - Simplified setup; added script for header, callback script on close; added close on escape keypress; added closer icon
