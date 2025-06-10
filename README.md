@@ -22,7 +22,7 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 - [FullPage Popup](#fullpage-popup)
    - [Setup](#setup-1)
    - [Opening and Closing FullPage Popups](#opening-and-closing-fullpage-popups)
-- [Dismiss Click, Escape Button Close and Closer (X) Icon Display](#dismiss-click-escape-button-close-and-closer-x-icon-display)
+- [Dismiss Click, Escape Button Close and Closer (X) Icon Display](#dismiss-click-escape-button-close-and-closer-icon-x-display)
    - [Global Script](#global-script)
    - [Page.Load](#pageload)
 - [CSS](#css)
