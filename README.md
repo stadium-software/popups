@@ -1,5 +1,5 @@
 # Popups
-This module provides two methods for creating popups, in-page popups and full-page popups. 
+This module provides two methods for creating popups, in-page and full-page. 
 
 ## Description
 Modal popups serve to focus the attention of users on a particular UI element. This is done to allow the users to focus on a specific task. Such popups are most appropriate for subtasks, such as adding or updating table rows and returning users back to the previous view. 
