@@ -16,11 +16,11 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 ## Contents <!-- omit in toc -->
 - [Application Setup](#application-setup)
 - [In-Page Popup](#in-page-popup)
-   - [Setup](#setup)
+   - [Page Setup](#page-setup)
    - [EventHandler](#eventhandler)
    - [Popup Headers](#popup-headers)
 - [FullPage Popup](#fullpage-popup)
-   - [Setup](#setup-1)
+   - [FullPage Setup](#fullpage-setup-1)
    - [Opening and Closing FullPage Popups](#opening-and-closing-fullpage-popups)
    - [Full-Page Popup Headers](#full-page-popup-headers)
 - [Dismiss Click, Escape Button Close and Closer (X) Icon Display](#dismiss-click-escape-button-close-and-closer-icon-x-display)
@@ -41,7 +41,7 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 # In-Page Popup 
 The in-page popup shows and hides a container on the page as the buttons are clicked. Use this method when pages are smaller and contain a managable number of elements. 
 
-## Setup
+## Page Setup
 1. Drag a *Container* control to a page
 2. Add a class called "stadium-popup" to the *Container* control *Classes* property 
 3. Set the *Visible* property of the *Container* control to "false"
@@ -62,7 +62,7 @@ Neatly styled popup titles can be added by:
 # FullPage Popup
 The full-page popup method makes complete pages appear to be popups. These pages use a Template that is styled to appear to be a popup. Use this method when pages become difficult to develop or maintain. 
 
-## Setup
+## FullPage Setup
 1. Create a new template and name it "PopupTemplate"
 2. Drag a *Container* control into the "PopupTemplate"
 3. Add a class called "stadium-popup" to the *Container* control *Classes* property 
