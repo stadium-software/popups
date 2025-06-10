@@ -20,7 +20,7 @@ Popups serve to focus the attention of users on a particular set of UI elements.
    - [EventHandler](#eventhandler)
    - [Popup Headers](#popup-headers)
 - [FullPage Popup](#fullpage-popup)
-   - [FullPage Setup](#fullpage-setup-1)
+   - [FullPage Setup](#fullpage-setup)
    - [Opening and Closing FullPage Popups](#opening-and-closing-fullpage-popups)
    - [Full-Page Popup Headers](#full-page-popup-headers)
 - [Dismiss Click, Escape Button Close and Closer (X) Icon Display](#dismiss-click-escape-button-close-and-closer-icon-x-display)
