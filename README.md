@@ -11,6 +11,7 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 2. Assign the class "stadium-popup" to the *Container*
 3. Set the *Visible* property to *false*
 4. Include the CSS for the module
+5. Open the popup by setting the *Visible* property to *true*
 
 ## Contents <!-- omit in toc -->
 - [Application Setup](#application-setup)
