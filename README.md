@@ -22,6 +22,7 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 - [FullPage Popup](#fullpage-popup)
    - [Setup](#setup-1)
    - [Opening and Closing FullPage Popups](#opening-and-closing-fullpage-popups)
+   - [Full-Page Popup Headers](#full-page-popup-headers)
 - [Dismiss Click, Escape Button Close and Closer (X) Icon Display](#dismiss-click-escape-button-close-and-closer-icon-x-display)
    - [Global Script](#global-script)
    - [Page.Load](#pageload)
@@ -56,7 +57,7 @@ The in-page popup shows and hides a container on the page as the buttons are cli
 ### Popup Headers
 Neatly styled popup titles can be added by:
 1. Adding a *Label* control as the first control into a popup *Container*
-2. Adding the class "stadium-popup-header" to the pabel
+2. Adding the class "stadium-popup-header" to the *Label*
 
 # FullPage Popup
 The full-page popup method makes complete pages appear to be popups. These pages use a Template that is styled to appear to be a popup. Use this method when pages become difficult to develop or maintain. 
@@ -74,6 +75,11 @@ The full-page popup method makes complete pages appear to be popups. These pages
 Navigate to a popup page to open pages that appear to be popups. 
 
 Use a *NavigateToPage* action to navigate away from a popup page (usually back to the opening page) to make it appear as if the popup was closed. 
+
+### Full-Page Popup Headers
+To display a header in a full-page popup
+1. Add a *Label* control as the first control into a popup page
+2. Add the class "stadium-popup-header" to the control
 
 # Dismiss Click, Escape Button Close and Closer Icon (X) Display
 It may be is useful to allow users to close a popup by clicking the background, pressing the escape key or clicking an X in the top right corner of the popup. 
@@ -185,6 +191,8 @@ function attachHeaderClose(el) {
 ![](images/ScriptParameters.png)
 
 ![](images/CallBackScript.png)
+
+
 
 # CSS
 The CSS below is required for the correct functioning of the module. Variables exposed in the [*popup-variables.css*](popup-variables.css) file can be [customised](#customising-css).
