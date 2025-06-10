@@ -1,0 +1,30 @@
+:root {
+    --stadium-popup-top-margin: 3rem;
+    --stadium-popup-background-color: white;
+    --stadium-popup-border-width: 0.1rem;
+    --stadium-popup-border-color: #eeeeee;
+    --stadium-popup-border-style: solid;
+    --stadium-popup-border-radius: 0.4rem;
+    --stadium-popup-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --stadium-popup-top-padding: 1.4rem;
+    --stadium-popup-bottom-padding: 1.4rem;
+    --stadium-popup-right-padding: 1.4rem;
+    --stadium-popup-left-padding: 1.4rem;
+
+    --stadium-popup-header-background-color: #f1f1f1;
+    --stadium-popup-header-bottom-border-width: 0.1rem;
+    --stadium-popup-header-bottom-border-color: #bbbbbb;
+    --stadium-popup-header-top-padding: 1.4rem;
+    --stadium-popup-header-right-padding: 1.4rem;
+    --stadium-popup-header-bottom-padding: 1.4rem;
+    --stadium-popup-header-left-padding: 1.4rem;
+    --stadium-popup-header-font-size: 2.2rem;
+    --stadium-popup-header-font-color: #6f6f6f;
+
+    --stadium-popup-close-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3C!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --%3E%3Cpath fill='%23333333' d='m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z'/%3E%3C/svg%3E");
+    --stadium-popup-close-icon-size: 1.4rem;
+    --stadium-popup-close-icon-top-position: 1rem;
+    --stadium-popup-close-icon-right-position: 1rem;
+
+    --stadium-popup-backdrop-color: rgb(0 0 0 / 25%);
+}

@@ -1,0 +1,88 @@
+html {
+    .stadium-popup {
+        position: fixed;
+        margin: var(--stadium-popup-top-margin, 3rem) auto 0 auto;
+        background-color: var(--stadium-popup-background-color, var(--BODY-BACKGROUND-COLOR, white));
+        border-radius: var(--stadium-popup-border-radius, 0.4rem);
+        border: var(--stadium-popup-border-width, 0) var(--stadium-popup-border-style, solid) var(--stadium-popup-border-color, var(--GENERAL-BORDER-COLOR, transparent));
+        box-shadow: var(--stadium-popup-box-shadow, var(--BOX-SHADOW-COLOR, 0 8px 32px rgba(0, 0, 0, 0.3)));
+        overflow: auto;
+        max-height: calc(96vh - var(--stadium-popup-top-margin, 3rem) - var(--BODY-FOOTER-HEIGHT));
+        max-width: 96vw;
+        z-index: 1001;
+        inset: 0;
+        width: fit-content;
+        height: fit-content;
+        > .stack-layout-container,
+        > .stack-layout-container > .page-content > .stack-layout-container {
+            padding: 0 var(--stadium-popup-right-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)) 0 var(--stadium-popup-left-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
+        }
+        &:has(.stadium-popup-closer) {
+            .stadium-popup-closer {
+                position: absolute;
+                right: var(--stadium-popup-close-icon-right-position, 1rem);
+                top: var(--stadium-popup-close-icon-top-position, 1rem);
+                background-image: var(--stadium-popup-close-icon, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3C!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --%3E%3Cpath fill='%23333333' d='m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z'/%3E%3C/svg%3E"));
+                background-repeat: no-repeat;
+                background-size: var(--stadium-popup-close-icon-size, 1.4rem);
+                background-position: center;
+                height: var(--stadium-popup-close-icon-size, 1.4rem);
+                width: var(--stadium-popup-close-icon-size, 1.4rem);
+                cursor: pointer;
+            }
+        }
+        &:has(.stadium-popup-header) {
+            .stadium-popup-header {
+                display: block;
+                font-size: var(--stadium-popup-header-font-size, var(--FONT-SIZE-LARGE, 2.2rem));
+                color: var(--stadium-popup-header-font-color, var(--BODY-FONT-COLOR, #333333));
+                margin-top: 0;
+                padding-top: var(--stadium-popup-header-top-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
+                padding-right: var(--stadium-popup-header-right-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
+                padding-bottom: var(--stadium-popup-header-bottom-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
+                padding-left: var(--stadium-popup-header-left-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
+                background-color: var(--stadium-popup-header-background-color, var(--LIGHT-GREY, #f1f1f1));
+                border-bottom: var(--stadium-popup-header-bottom-border-width, 0.1rem) solid var(--stadium-popup-header-bottom-border-color, var(--GENERAL-BORDER-COLOR, #bbbbbb));
+            }
+            > .stack-layout-container:has(> .stadium-popup-header),
+            > .stack-layout-container > .page-content > .stack-layout-container:has(> .stadium-popup-header) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        &:has(.page-content) {
+            > .stack-layout-container:has(> .page-content) {
+                padding: 0;
+            }
+        }
+        &:not(:has(.stadium-popup-header)) {
+            > .stack-layout-container:first-of-type:not(:has(.stadium-popup-header, .page-content)),
+            > .stack-layout-container > .page-content > .stack-layout-container:first-of-type:not(:has(.stadium-popup-header)) {
+                padding-top: var(--stadium-popup-top-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
+            }
+        }
+        > .stack-layout-container:last-of-type:not(:has(> .stadium-popup-header, .page-content)),
+        > .stack-layout-container > .page-content > .stack-layout-container:last-of-type:not(:has(> .stadium-popup-header)) {
+            padding-bottom: var(--stadium-popup-bottom-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
+        }
+    }
+    .stack-layout-container:has(> .stadium-popup:not([style*="display: none"])) {
+        &::after {
+            content: "";
+            position: fixed;
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: var(--stadium-popup-backdrop-color, var(--MODAL-OVERLAY-COLOR, rgb(0 0 0 / 25%)));
+            z-index: 1000;
+        }
+    }
+}
+html {
+    min-height: 100%;
+    font-size: 62.5%;
+}

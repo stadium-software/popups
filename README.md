@@ -1,173 +1,192 @@
-# Modal Popups
-This module contains three different modal popup variations. Additionally, it describes how to dismiss a popup by clicking on the background
+# Popups
+This module contains a description 
 
 ## Description
 Modal popups serve to focus the attention of users on a particular UI element. This is done to allow the users to focus on a specific task. Such popups are most appropriate for subtasks, such as adding or updating table rows and returning users back to the previous view. 
 
 https://github.com/stadium-software/popups/assets/2085324/7d0fd050-3994-4c9e-99ff-80147be1783f
 
-## Version
-2.0 - Added full-page popup and full-page popup with background page in an iFrame. Removed Stadium 5 sample. 
+## Contents <!-- omit in toc -->
+- [Version](#version)
+- [Application Setup](#application-setup)
+- [In-Page Popup](#in-page-popup)
 
-2.1 - Added modal content padding variables
+# Version
+3.0 - Simplified setup; added script for header, callback script on close; added close on escape keypress; added closer icon
 
-2.1.1 Upgraded the readme for 6.12+; converted px to rem
-
-## Application Setup
+# Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
 
-## Popups
-
-1. [In-Page Popup](#in-page-popup)
-2. [FullPage Popup](#fullpage-popup)
-3. [FullPage Popup With Background Page](#fullpage-popup-with-background-page)
-4. [Dismiss Click](#dismiss-click)
-
-<hr>
-
 # In-Page Popup 
-The in-page popup shows and hides a container on the page as the buttons are clicked. You can use this method when you have smaller pages with few elements. 
+The in-page popup shows and hides a container on the page as the buttons are clicked. Use this method when pages are smaller and contain a managable number of elements. 
 
 ## Setup
-1. Drag a *Container* control to a page and name it "ModalBackgroundContainer"
-2. Add a class called "custom-modal-background" to the "ModalBackgroundContainer" control *Classes* property 
-3. Set the *Visible* property of the "ModalBackgroundContainer" control to "false"
-4. Drag a container inside the "ModalBackgroundContainer" control and name it "ModalContentContainer"
-5. Add a class called "custom-modal-content" to the "ModalContentContainer" control *Classes* property 
-6. Drag any controls you wish to display into the ModalContent into the control named "ModalContentContainer"
+1. Drag a *Container* control to a page
+2. Add a class called "stadium-popup" to the *Container* control *Classes* property 
+3. Set the *Visible* property of the *Container* control to "false"
+4. Drag any controls you wish to display in the popup into control
 
 ![](images/BasicSetup.png)
 
-## EventHandler
-1. Drag a *Button* or *Link* control to the page  and name it "ModalShowButton" or add a "Click" event handler to a DataGrid column
-2. Add a *Click* Event Handler to the "ModalShowButton" control (not needed for DataGrid columns)
-3. Drag a *SetValue* action into the Event Handler
-   1. Name the SetValue "ShowPopup"
-   2. Set the Target property to: *ModalBackgroundContainer.visible*
-   3. Set the Value property to: *true*
-4. Drag a *Button* or *Link* control into the "ModalContentContainer" control and name it "ModalCloseButton"
-5. Add a *Click* eventhandler to the "ModalCloseButton" control
-6. Drag a *SetValue* action into the *ModalCloseButton.Click* eventhandler
-   1. Name the SetValue "HidePopup"
-   2. Set the Target property to: *ModalBackgroundContainer.visible*
-   3. Set the Value property to: *false*
+### EventHandler
+1. Drag a *SetValue* action into the Event Handler
+   1. Set the Target property to: *Container.visible*
+   2. Set the Value property to: *true* to show a popup or to *false* to hide it
 
 # FullPage Popup
-The full-page popup method makes complete pages appear to be popups. These pages use a Template that applies to popup styling to any page. This method has the advantage that the application developer can focus on the popup page development without having to deal with the rest of the page. This means that development can be faster and simpler. The only difference between this method and an in-page popup is that the opening page is not visible to the end user in the background of the popup page. If this feature is important to you, you can try the [FullPage Popup With Background Page](#fullpage-popup-with-background-page) method below. 
+The full-page popup method makes complete pages appear to be popups. These pages use a Template that applies to popup styling to any page. This method has the advantage that the application developer can focus on the popup page development without having to deal with the rest of the page. This means that development can be faster and simpler. The only difference between this method and an in-page popup is that the opening page is not visible to the end user in the background of the popup page.
 
 ## Setup
 1. Create a new template and name it "PopupTemplate"
-2. Drag a *Container* control into the "PopupTemplate" and name it "ModalBackgroundContainer"
-3. Add a class called "custom-modal-background" to the "ModalBackgroundContainer" control *Classes* property 
-4. Drag a container inside the "ModalBackgroundContainer" control and name it "ModalContentContainer"
-5. Add a class called "custom-modal-content" to the "ModalContentContainer" control *Classes* property 
-6. Drag the *PageContentPlaceholder* into the "ModalBackgroundContainer" control
-7. In the Page Properties, assign the "PopupTemplate" to pages to make them appear to be popups
+2. Drag a *Container* control into the "PopupTemplate"
+3. Add a class called "stadium-popup" to the *Container* control *Classes* property 
+4. Drag the *PageContentPlaceholder* into the *Container* control
+5. In the Page Properties of popup pages, assign the "PopupTemplate" to make them appear as popups
 
 ![](images/PopupTemplateView.png)
 
-## Opening and closing a FullPage Popup
-Navigate to a popup page to make it appear as if the popup was opened. 
+### Opening and Closing FullPage Popups
+Navigate to a popup page to open pages that appear to be popups. 
 
-Navigate away from a popup page (usually back to the opening page) to make it appear as if the popup was closed. 
+Use a *NavigateToPage* action to navigate away from a popup page (usually back to the opening page) to make it appear as if the popup was closed. 
 
-# FullPage Popup With Background Page
-To show the opening page in the background, we can create an iframe element and load the opening page into it. To accomplish this, we need to create a FullPage Popup as above and then add two scripts. One that creates the iframe element when the user is navigated to the popup page and another to remove the iframe element when the user is navigated away from the popup page again. 
+# Dismiss Click, Escape Button Close, Closer (X) Display and Popup Headers
+Sometimes, it is useful to allow users to click the backdrop to close a popup. The dismiss click is quickly and easily performed, which can lead to accidental popup closures. Use this method only when closing the popup by accident does not represent a significant annoyance to the user. 
 
-## Opener Page Setup
-1. Create a [FullPage Popup](#fullpage-popup) as above
-
-## Opening Event Handler Setup
-The iFrame must be appended **before** the user is navigated to the popup page. 
-
-1. Drag a *Javascript* action into an event handler in the opening page (before the *NavigateToPage* action in the event handler that navigates the user to the popup page)
-2. Enter the Javascript below into the *Code* property 
+## Global Script
+1. Create a Global Script called "PopupClose"
+2. Add the input parameters below to the Global Script
+   1. DismissOnClick
+   2. DismissOnEscape
+   3. HeaderCloseIcon
+   4. CallbackOnClose
+3. Drag a *JavaScript* action into the script
+4. Add the Javascript below into the JavaScript code property
 ```javascript
-/* Stadium Script Version 2.1 https://github.com/stadium-software/popups */
-let iframe = document.querySelector(".iframe-background");
-if (!iframe) {
-	iframe = document.createElement("iframe");
-	document.body.appendChild(iframe);
-	iframe.classList.add("iframe-background");
+/* Stadium Script v3.0 https://github.com/stadium-software/popups */
+let scope = this;
+let click = ~.Parameters.Input.DismissOnClick;
+if (click !== false && click !== "false") {
+    click = true;
 }
-iframe.src = window.location.href;
-```
-
-![](images/PopupShow-WBackground.png)
-
-## Templates Page.Load Event Setup
-The iFrame needs to be removed from the DOM when the user navigates away from the popup page. To achieve this we need to add a script to each template **except** for the popup template
-
-1. Drag a *Javascript* action into the page.load event handlers of all templates in your application, **except** for the popup template ("PopupTemplate")
-3. Enter the Javascript below into the *Code* property 
-```javascript
-/* Stadium Script Version 2.1 https://github.com/stadium-software/popups */
-let iframe = document.querySelector(".iframe-background");
-if (iframe) iframe.remove();
-```
-
-![](images/PopupClose-WBackground.png)
-
-# Dismiss Click
-Sometimes, it is useful to allow users to click the backdrop to close a modal popup. The dismiss click is quickly and easily performed, which can lead to accidental popup closures. Use this method only when closing the popup by accident does not represent a significant annoyance to the user. 
-
-### Setup
-1. Create a script called "DismissPopup"
-2. Drag a SetValue into the script and call it "HidePopup"
-   1. Set the *Target* property to *ModalBackgroundContainer.Visible*
-   2. Set the *Value* property to *false*
-3. In the *ModalShowButton.Click* event, drag a Javascript action into the script and add the Javascript below into the *Code* property
-```javascript
-/* Stadium Script Version 2.1 https://github.com/stadium-software/popups */
-var th = this;
-document.querySelector(".custom-modal-background").addEventListener("click", toggleEventListener);
-function toggleEventListener(e) {
-	if (e.target.classList.contains("custom-modal-background")) {
-		th.DismissPopup();
-		e.target.removeEventListener("click", toggleEventListener);
-	}
+let esc = ~.Parameters.Input.DismissOnEscape;
+if (esc !== false && esc !== "false") {
+    esc = true;
+}
+let header = ~.Parameters.Input.HeaderCloseIcon;
+if (header !== false && header !== "false") {
+    header = true;
+}
+let callScriptOnClose = ~.Parameters.Input.CallbackOnClose || false;
+let popups = document.querySelectorAll(".stadium-popup");
+let getObjectName = (obj) => {
+    let objname = obj.id.replace("-container","");
+    do {
+        let arrNameParts = objname.split(/_(.*)/s);
+        objname = arrNameParts[1];
+    } while ((objname.match(/_/g) || []).length > 0 && !scope[`${objname}Classes`]);
+    return objname;
+};
+let tries = 0;
+let wait = async (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+let scriptCaller = async (script) => {
+    tries++;
+    if (tries > 20) {
+    	return false;
+    } else {
+        try {
+            await scope[script]();
+            return true;
+        } catch (error) {
+            wait(100).then(() => scriptCaller(script));
+        }
+    }
+};
+if (click) document.querySelector(".container").addEventListener("click", closeOnClick);
+if (esc) {
+    document.querySelector(".container").setAttribute("closeOnEscape", true);
+    document.addEventListener("keydown", closeOnKeyPress);
+}
+if (header) {
+    for (let i = 0; i < popups.length; i++) {
+        attachHeaderClose(popups[i]);
+    }
+}
+function setDMValues(ob, property, value) {
+    let obname = getObjectName(ob);
+    scope[`${obname}${property}`] = value;
+}
+function closeOnClick() {
+    for (let i = 0; i < popups.length; i++) {
+        closePopup(popups[i]);
+    }
+}
+function closeOnKeyPress(e) {
+    if(e.key === "Escape" && document.querySelector(".container").getAttribute("closeOnEscape")) {
+        for (let i = 0; i < popups.length; i++) {
+            closePopup(popups[i]);
+        }
+    }
+}
+function closePopup(el) {
+    setDMValues(el, "Visible", false);
+    if (callScriptOnClose) scriptCaller(callScriptOnClose);
+}
+function attachHeaderClose(el) {
+    let head = el.querySelectorAll(".stack-layout-container")[0];
+    let template = el.querySelector(".page-content");
+    if (template) {
+        head = template.querySelectorAll(".stack-layout-container")[0];
+    }
+    let headerCloser = document.createElement("div");
+    headerCloser.classList.add("stadium-popup-closer");
+    headerCloser.addEventListener("click", () => {
+        closePopup(el);
+    });
+    head.appendChild(headerCloser);
 }
 ```
 
-![](images/DismissClickScript.png)
-
-## Customising the popup
-The *modal-variables.css* file included in this repo contains a set of variables that can be changed to customise the modal popup. Follow the steps below to create a custom popup implementation 
-1. Open the CSS file called [*modal-variables.css*](modal-variables.css) from this repo in an editor of your choice (I recommend [VS Code](https://code.visualstudio.com/))
-2. Adjust the variables in the *:root* element as you see fit
+## Page.Load
+1. Drag the global script called "PopupClose" into the Page.Load event Handler
+2. Provide values for the script input parameters
+   1. DismissOnClick (boolean): Add false to disable closing popups by clicking on the background (default true)
+   2. DismissOnEscape (boolean): Add false to disable closing popups by pressing the escape key (default true)
+   3. HeaderCloseIcon (boolean): Add false to disable closing popups by clicking on an X icon in the top right corner of the popup (default true)
+   4. CallbackOnClose (string): Add a page script and provide it's name here to call the script when the popup is closed using the dismiss click, escape key or the closer icon. This is necessary when using the Full-Page popup method described above so users can be redirected to the opener page when the popup is closed by the user. 
 
 ## CSS
-The CSS below is required for the correct functioning of the module. Variables exposed in the [*modal-variables.css*](modal-variables.css) file can be [customised](#customising-css).
+The CSS below is required for the correct functioning of the module. Variables exposed in the [*popup-variables.css*](popup-variables.css) file can be [customised](#customising-css).
 
 ### Before v6.12
 1. Create a folder called "CSS" inside of your Embedded Files in your application
-2. Drag the two CSS files from this repo [*modal-variables.css*](modal-variables.css) and [*modal.css*](modal.css) into that folder
+2. Drag the two CSS files from this repo [*popup-variables.css*](popup-variables.css) and [*popup.css*](popup.css) into that folder
 3. Paste the link tags below into the *head* property of your application
 ```html
-<link rel="stylesheet" href="{EmbeddedFiles}/CSS/modal.css">
-<link rel="stylesheet" href="{EmbeddedFiles}/CSS/modal-variables.css">
+<link rel="stylesheet" href="{EmbeddedFiles}/CSS/popup.css">
+<link rel="stylesheet" href="{EmbeddedFiles}/CSS/popup-variables.css">
 ``` 
 
 ### v6.12+
 1. Create a folder called "CSS" inside of your Embedded Files in your application
-2. Drag the CSS files from this repo [*modal.css*](modal.css) into that folder
+2. Drag the CSS files from this repo [*popup.css*](popup.css) into that folder
 3. Paste the link tag below into the *head* property of your application
 ```html
-<link rel="stylesheet" href="{EmbeddedFiles}/CSS/modal.css">
+<link rel="stylesheet" href="{EmbeddedFiles}/CSS/popup.css">
 ``` 
 
 ### Customising CSS
-1. Open the CSS file called [*modal-variables.css*](modal-variables.css) from this repo
+1. Open the CSS file called [*popup-variables.css*](popup-variables.css) from this repo
 2. Adjust the variables in the *:root* element as you see fit
 3. Stadium 6.12+ users can comment out any variable they do **not** want to customise
-4. Add the [*modal-variables.css*](modal-variables.css) to the "CSS" folder in the EmbeddedFiles (overwrite)
+4. Add the [*popup-variables.css*](popup-variables.css) to the "CSS" folder in the EmbeddedFiles (overwrite)
 5. Paste the link tag below into the *head* property of your application (if you don't already have it there)
 ```html
-<link rel="stylesheet" href="{EmbeddedFiles}/CSS/modal-variables.css">
+<link rel="stylesheet" href="{EmbeddedFiles}/CSS/popup-variables.css">
 ``` 
 6. Add the file to the "CSS" inside of your Embedded Files in your application
 
-**NOTE: Do not change any of the CSS in the 'modal.css' file**
+**NOTE: Do not change any of the CSS in the 'popup.css' file**
 
 ## Upgrading Stadium Repos
 Stadium Repos are not static. They change as additional features are added and bugs are fixed. Using the right method to work with Stadium Repos allows for upgrading them in a controlled manner. 
