@@ -17,7 +17,7 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 - [Dismiss Click, Escape Button Close, Closer (X) Display and Popup Headers](#dismiss-click-escape-button-close-closer-x-display-and-popup-headers)
    - [Global Script](#global-script)
    - [Page.Load](#pageload)
-   - [CSS](#css)
+- [CSS](#css)
    - [Before v6.12](#before-v612)
    - [v6.12+](#v612)
    - [Customising CSS](#customising-css)
@@ -167,7 +167,7 @@ function attachHeaderClose(el) {
    3. HeaderCloseIcon (boolean): Add false to disable closing popups by clicking on an X icon in the top right corner of the popup (default true)
    4. CallbackOnClose (string): Add a page script and provide it's name here to call the script when the popup is closed using the dismiss click, escape key or the closer icon. This is necessary when using the Full-Page popup method described above so users can be redirected to the opener page when the popup is closed by the user. 
 
-## CSS
+# CSS
 The CSS below is required for the correct functioning of the module. Variables exposed in the [*popup-variables.css*](popup-variables.css) file can be [customised](#customising-css).
 
 ### Before v6.12
