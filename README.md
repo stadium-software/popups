@@ -70,7 +70,9 @@ Navigate to a popup page to open pages that appear to be popups.
 Use a *NavigateToPage* action to navigate away from a popup page (usually back to the opening page) to make it appear as if the popup was closed. 
 
 # Dismiss Click, Escape Button Close, Closer (X) Display and Popup Headers
-Sometimes, it is useful to allow users to click the backdrop to close a popup. The dismiss click is quickly and easily performed, which can lead to accidental popup closures. Use this method only when closing the popup by accident does not represent a significant annoyance to the user. 
+It may be is useful to allow users to close a popup by clicking the background, pressing the escape key or clicking an X in the top right corner of the popup. Neatly styled popup titles can also be added using this module. 
+
+![](images/PopupHeader.png)
 
 ## Global Script
 1. Create a Global Script called "PopupClose"
