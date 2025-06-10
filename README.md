@@ -18,10 +18,11 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 - [In-Page Popup](#in-page-popup)
    - [Setup](#setup)
    - [EventHandler](#eventhandler)
+   - [Popup Headers](#popup-headers)
 - [FullPage Popup](#fullpage-popup)
    - [Setup](#setup-1)
    - [Opening and Closing FullPage Popups](#opening-and-closing-fullpage-popups)
-- [Dismiss Click, Escape Button Close, Closer (X) Display and Popup Headers](#dismiss-click-escape-button-close-closer-x-display-and-popup-headers)
+- [Dismiss Click, Escape Button Close and Closer (X) Icon Display](#dismiss-click-escape-button-close-and-closer-x-icon-display)
    - [Global Script](#global-script)
    - [Page.Load](#pageload)
 - [CSS](#css)
@@ -52,6 +53,11 @@ The in-page popup shows and hides a container on the page as the buttons are cli
    1. Set the Target property to: *Container.visible*
    2. Set the Value property to: *true* to show a popup or to *false* to hide it
 
+### Popup Headers
+Neatly styled popup titles can be added by:
+1. Adding a *Label* control as the first control into a popup *Container*
+2. Adding the class "stadium-popup-header" to the pabel
+
 # FullPage Popup
 The full-page popup method makes complete pages appear to be popups. These pages use a Template that is styled to appear to be a popup. Use this method when pages become difficult to develop or maintain. 
 
@@ -69,8 +75,8 @@ Navigate to a popup page to open pages that appear to be popups.
 
 Use a *NavigateToPage* action to navigate away from a popup page (usually back to the opening page) to make it appear as if the popup was closed. 
 
-# Dismiss Click, Escape Button Close, Closer (X) Display and Popup Headers
-It may be is useful to allow users to close a popup by clicking the background, pressing the escape key or clicking an X in the top right corner of the popup. Neatly styled popup titles can also be added using this module. 
+# Dismiss Click, Escape Button Close and Closer Icon (X) Display
+It may be is useful to allow users to close a popup by clicking the background, pressing the escape key or clicking an X in the top right corner of the popup. 
 
 ![](images/PopupHeader.png)
 
