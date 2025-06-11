@@ -192,8 +192,6 @@ function attachHeaderClose(el) {
 
 ![](images/CallBackScript.png)
 
-
-
 # CSS
 The CSS below is required for the correct functioning of the module. Variables exposed in the [*popup-variables.css*](popup-variables.css) file can be [customised](#customising-css).
 
