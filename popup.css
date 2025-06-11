@@ -37,9 +37,9 @@ html {
                 font-size: var(--stadium-popup-header-font-size, var(--FONT-SIZE-LARGE, 2.2rem));
                 color: var(--stadium-popup-header-font-color, var(--BODY-FONT-COLOR, #333333));
                 margin-top: 0;
-                padding-top: var(--stadium-popup-header-top-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
+                padding-top: var(--stadium-popup-header-top-padding, calc(var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem) / 2));
                 padding-right: calc(var(--stadium-popup-header-right-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)) + 1.2rem);
-                padding-bottom: var(--stadium-popup-header-bottom-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
+                padding-bottom: var(--stadium-popup-header-bottom-padding, calc(var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem) / 2));
                 padding-left: var(--stadium-popup-header-left-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
                 background-color: var(--stadium-popup-header-background-color, var(--LIGHT-GREY, #f1f1f1));
                 border-bottom: var(--stadium-popup-header-bottom-border-width, 0.1rem) solid var(--stadium-popup-header-bottom-border-color, var(--GENERAL-BORDER-COLOR, #bbbbbb));
