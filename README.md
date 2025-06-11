@@ -149,9 +149,11 @@ function setDMValues(ob, property, value) {
     let obname = getObjectName(ob);
     scope[`${obname}${property}`] = value;
 }
-function closeOnClick() {
-    for (let i = 0; i < popups.length; i++) {
-        closePopup(popups[i]);
+function closeOnClick(e) {
+    if (!e.target.closest(".stadium-popup")) {
+        for (let i = 0; i < popups.length; i++) {
+            closePopup(popups[i]);
+        }
     }
 }
 function closeOnKeyPress(e) {
