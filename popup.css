@@ -38,7 +38,7 @@ html {
                 color: var(--stadium-popup-header-font-color, var(--BODY-FONT-COLOR, #333333));
                 margin-top: 0;
                 padding-top: var(--stadium-popup-header-top-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
-                padding-right: var(--stadium-popup-header-right-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
+                padding-right: calc(var(--stadium-popup-header-right-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)) + 1.2rem);
                 padding-bottom: var(--stadium-popup-header-bottom-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
                 padding-left: var(--stadium-popup-header-left-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
                 background-color: var(--stadium-popup-header-background-color, var(--LIGHT-GREY, #f1f1f1));
