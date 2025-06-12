@@ -28,4 +28,5 @@
     --stadium-popup-close-icon-right-position: 1rem;
 
     --stadium-popup-backdrop-color: rgb(0 0 0 / 25%);
+    --stadium-popup-backdrop-filter: none; /*e.g. blur(5px) see https://developer.mozilla.org/en-US/docs/Web/CSS/filter*/
 }

@@ -80,6 +80,7 @@ html {
             right: 0;
             background-color: var(--stadium-popup-backdrop-color, var(--MODAL-OVERLAY-COLOR, rgb(0 0 0 / 25%)));
             z-index: 1000;
+            backdrop-filter: var(--stadium-popup-backdrop-filter, none);
         }
     }
 }
