@@ -4,7 +4,7 @@ html {
         margin: var(--stadium-popup-top-margin, 3rem) auto 0 auto;
         background-color: var(--stadium-popup-background-color, var(--BODY-BACKGROUND-COLOR, white));
         border-radius: var(--stadium-popup-border-radius, 0.4rem);
-        border: var(--stadium-popup-border-width, 0) var(--stadium-popup-border-style, solid) var(--stadium-popup-border-color, var(--GENERAL-BORDER-COLOR, transparent));
+        border: var(--stadium-popup-border-width, 0) var(--stadium-popup-border-style, solid) var(--stadium-popup-border-color, var(--LIGHT-GREY, transparent));
         box-shadow: var(--stadium-popup-box-shadow, var(--BOX-SHADOW-COLOR, 0 8px 32px rgba(0, 0, 0, 0.3)));
         overflow: auto;
         max-height: calc(96vh - var(--stadium-popup-top-margin, 3rem) - var(--BODY-FOOTER-HEIGHT));
