@@ -35,6 +35,8 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 # Version
 3.0 - Simplified setup; added script for header, callback script on close; added close on escape keypress; added closer icon
 
+3.1 Simplified the CSS and made the default size of the popupcloser larger
+
 # Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
 
@@ -96,7 +98,7 @@ It may be is useful to allow users to close a popup by clicking the background, 
 3. Drag a *JavaScript* action into the script
 4. Add the Javascript below into the JavaScript code property
 ```javascript
-/* Stadium Script v3.0 https://github.com/stadium-software/popups */
+/* Stadium Script v3.1 https://github.com/stadium-software/popups */
 let scope = this;
 let click = ~.Parameters.Input.DismissOnClick;
 if (click !== false && click !== "false") {
