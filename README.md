@@ -35,7 +35,7 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 # Version
 3.0 - Simplified setup; added script for header, callback script on close; added close on escape keypress; added closer icon
 
-3.1 Simplified the CSS and made the default size of the popupcloser larger
+3.1 Simplified the CSS, made the default size of the popup closer icon larger and allowed for the changing of the icon colour using a variable
 
 # Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
