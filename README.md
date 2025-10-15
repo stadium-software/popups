@@ -14,25 +14,33 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 5. Open the popup by setting the *Visible* property to *true*
 
 ## Contents <!-- omit in toc -->
-- [Application Setup](#application-setup)
-- [In-Page Popup](#in-page-popup)
-   - [Page Setup](#page-setup)
-   - [EventHandler](#eventhandler)
-   - [Popup Headers](#popup-headers)
-- [FullPage Popup](#fullpage-popup)
-   - [FullPage Setup](#fullpage-setup)
-   - [Opening and Closing FullPage Popups](#opening-and-closing-fullpage-popups)
-   - [Full-Page Popup Headers](#full-page-popup-headers)
-- [Dismiss Click, Escape Button Close and Closer (X) Icon Display](#dismiss-click-escape-button-close-and-closer-icon-x-display)
-   - [Global Script](#global-script)
-   - [Page.Load](#pageload)
-- [CSS](#css)
-   - [Before v6.12](#before-v612)
-   - [v6.12+](#v612)
-   - [Customising CSS](#customising-css)
-- [Upgrading Stadium Repos](#upgrading-stadium-repos)
+1. [Popups](#popups)
+   1. [Description](#description)
+   2. [Overview](#overview)
+2. [Version](#version)
+   1. [Change Log](#change-log)
+3. [Application Setup](#application-setup)
+4. [In-Page Popup](#in-page-popup)
+   1. [Page Setup](#page-setup)
+      1. [EventHandler](#eventhandler)
+      2. [Popup Headers](#popup-headers)
+5. [FullPage Popup](#fullpage-popup)
+   1. [FullPage Setup](#fullpage-setup)
+      1. [Opening and Closing FullPage Popups](#opening-and-closing-fullpage-popups)
+      2. [Full-Page Popup Headers](#full-page-popup-headers)
+6. [Dismiss Click, Escape Button Close and Closer Icon (X) Display](#dismiss-click-escape-button-close-and-closer-icon-x-display)
+   1. [Global Script](#global-script)
+   2. [Page.Load](#pageload)
+7. [CSS](#css)
+      1. [Before v6.12](#before-v612)
+      2. [v6.12+](#v612)
+      3. [Customising CSS](#customising-css)
+   1. [Upgrading Stadium Repos](#upgrading-stadium-repos)
 
 # Version
+3.1
+
+## Change Log
 3.0 - Simplified setup; added script for header, callback script on close; added close on escape keypress; added closer icon
 
 3.1 Simplified the CSS, made the default size of the popup closer icon larger and allowed for the changing of the icon colour using a variable
