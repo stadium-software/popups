@@ -40,7 +40,7 @@ Popups serve to focus the attention of users on a particular set of UI elements.
    1. [Upgrading Stadium Repos](#upgrading-stadium-repos)
 
 # Version
-3.2
+3.3
 
 ## Change Log
 3.0 - Simplified setup; added script for header, callback script on close; added close on escape keypress; added closer icon
@@ -48,6 +48,8 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 3.1 Simplified the CSS, made the default size of the popup closer icon larger and allowed for the changing of the icon colour using a variable
 
 3.2 Integrated CSS with script - all popups must be invoked using the script regardless of whether the dismiss on click, escape key or closer icon features are used or not. Version 3.2 is backwards compatible to v3.1. Upgrading a current implementation to this version of the script does not require any changes to existing pages.
+
+3.3 Fixed escape close bug when multiple popups are present on a page
 
 # Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
@@ -63,7 +65,7 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 3. Drag a *JavaScript* action into the script
 4. Add the Javascript below into the JavaScript code property
 ```javascript
-/* Stadium Script v3.2 https://github.com/stadium-software/popups */
+/* Stadium Script v3.3 https://github.com/stadium-software/popups */
 let scope = this;
 let popupClassName = ~.Parameters.Input.PopupContainerClass;
 let click = ~.Parameters.Input.DismissOnClick;
@@ -115,7 +117,10 @@ loadCSS();
 if (click) document.querySelector(".container").addEventListener("click", closeOnClick);
 if (esc) {
     document.querySelector(".container").setAttribute("closeOnEscape", true);
-    document.addEventListener("keydown", closeOnKeyPress);
+    if (!window.popupEscapeListenerAttached) {
+        document.addEventListener("keydown", closeOnKeyPress);
+        window.popupEscapeListenerAttached = true;
+    }
 }
 if (header) {
     for (let i = 0; i < popups.length; i++) {
