@@ -69,6 +69,7 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 let scope = this;
 let popupClassName = ~.Parameters.Input.PopupContainerClass;
 let click = ~.Parameters.Input.DismissOnClick;
+loadCSS();
 if (click !== false && click !== "false") {
     click = true;
 }
@@ -113,7 +114,6 @@ let scriptCaller = async (script) => {
         }
     }
 };
-loadCSS();
 if (click) document.querySelector(".container").addEventListener("click", closeOnClick);
 if (esc) {
     document.querySelector(".container").setAttribute("closeOnEscape", true);
