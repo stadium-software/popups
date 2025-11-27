@@ -170,9 +170,8 @@ function loadCSS() {
         let cssMain = document.createElement("style");
         cssMain.id = moduleID;
         cssMain.type = "text/css";
-        cssMain.textContent = `
-        html {
-    .stadium-popup {
+        cssMain.textContent = `html {
+    & .stadium-popup {
         position: fixed;
         margin: var(--stadium-popup-top-margin, 3rem) auto 0 auto;
         background-color: var(--stadium-popup-background-color, var(--BODY-BACKGROUND-COLOR, white));
@@ -188,36 +187,36 @@ function loadCSS() {
         height: fit-content;
         &:not(:has(.page-content)),
         &:has(.page-content) .page-content {
-            > .stack-layout-container:first-child > .control-container {
+            & > .stack-layout-container:first-child > .control-container {
                 margin-top: 0;
             }
-            > .stack-layout-container {
+            & > .stack-layout-container {
                 padding-right: var(--stadium-popup-header-right-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
                 padding-left: var(--stadium-popup-header-left-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
             }
-            > .stack-layout-container:first-child {
+            & > .stack-layout-container:first-child {
                 padding-top: var(--stadium-popup-header-top-padding, calc(var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)));
             }
-            > .stack-layout-container:last-child {
+            & > .stack-layout-container:last-child {
                 padding-bottom: var(--stadium-popup-header-bottom-padding, calc(var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)));
             }
         }
         &:not(:has(.stadium-popup-header)) {
-            > .stack-layout-container:first-child > .control-container {
+            & > .stack-layout-container:first-child > .control-container {
                 margin-top: 0;
                 padding-right: calc(var(--stadium-popup-header-right-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)) + var(--stadium-popup-close-icon-size, 3rem) / 2);
             }
-            .stadium-popup-closer {
+            & .stadium-popup-closer {
                 position: absolute;
                 top: var(--stadium-popup-close-icon-top-position, 1rem);
                 right: var(--stadium-popup-close-icon-right-position, 1rem);
             }
         }
         &:has(.stadium-popup-header) {
-            > .stack-layout-container:first-child > .control-container {
+            & > .stack-layout-container:first-child > .control-container {
                 margin-top: 0;
             }
-            .stack-layout-container:has(> .stadium-popup-header) {
+            & .stack-layout-container:has(> .stadium-popup-header) {
                 display: flex;
                 align-items: center;
                 background-color: var(--stadium-popup-header-background-color, var(--GENERAL-BORDER-COLOR, #eee));
@@ -229,14 +228,14 @@ function loadCSS() {
             }
 
         }
-        .stadium-popup-header {
+        & .stadium-popup-header {
             display: flex;
             justify-content: var(--stadium-popup-header-alignment, left);
             font-size: var(--stadium-popup-header-font-size, var(--FONT-SIZE-LARGE, 2.2rem));
             color: var(--stadium-popup-header-font-color, var(--BODY-FONT-COLOR, #333333));
             margin-top: 0;
         }
-        .stadium-popup-closer {
+        & .stadium-popup-closer {
             margin-left: auto;
             background-color: var(--stadium-popup-header-font-color, var(--LABEL-TEXT-COLOR, #6f6f6f));
             mask-image: var(--stadium-popup-close-icon, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3C!-- Icon from Gridicons by Automattic - https://github.com/Automattic/gridicons/blob/trunk/LICENSE.md --%3E%3Cpath fill='currentColor' d='M18.36 19.78L12 13.41l-6.36 6.37l-1.42-1.42L10.59 12L4.22 5.64l1.42-1.42L12 10.59l6.36-6.36l1.41 1.41L13.41 12l6.36 6.36z'/%3E%3C/svg%3E"));
@@ -251,7 +250,7 @@ function loadCSS() {
             cursor: pointer;
         }
     }
-    .stack-layout-container:has(> .stadium-popup:not([style*="display: none"])) {
+    & .stack-layout-container:has(> .stadium-popup:not([style*="display: none"])) {
         &::after {
             content: "";
             position: fixed;
