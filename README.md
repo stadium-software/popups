@@ -40,7 +40,7 @@ Popups serve to focus the attention of users on a particular set of UI elements.
    1. [Upgrading Stadium Repos](#upgrading-stadium-repos)
 
 # Version
-3.3
+3.4
 
 ## Change Log
 3.0 - Simplified setup; added script for header, callback script on close; added close on escape keypress; added closer icon
@@ -50,6 +50,8 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 3.2 Integrated CSS with script - all popups must be invoked using the script regardless of whether the dismiss on click, escape key or closer icon features are used or not. Version 3.2 is backwards compatible to v3.1. Upgrading a current implementation to this version of the script does not require any changes to existing pages.
 
 3.3 Fixed escape close bug when multiple popups are present on a page
+
+3.4 Fixed CSS not applied bug
 
 # Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
@@ -65,7 +67,7 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 3. Drag a *JavaScript* action into the script
 4. Add the Javascript below into the JavaScript code property
 ```javascript
-/* Stadium Script v3.3 https://github.com/stadium-software/popups */
+/* Stadium Script v3.4 https://github.com/stadium-software/popups */
 let scope = this;
 let popupClassName = ~.Parameters.Input.PopupContainerClass;
 let click = ~.Parameters.Input.DismissOnClick;
@@ -170,106 +172,98 @@ function loadCSS() {
         let cssMain = document.createElement("style");
         cssMain.id = moduleID;
         cssMain.type = "text/css";
-        cssMain.textContent = `html {
-    & .stadium-popup {
-        position: fixed;
-        margin: var(--stadium-popup-top-margin, 3rem) auto 0 auto;
-        background-color: var(--stadium-popup-background-color, var(--BODY-BACKGROUND-COLOR, white));
-        border-radius: var(--stadium-popup-border-radius, 0.4rem);
-        border: var(--stadium-popup-border-width, 0) var(--stadium-popup-border-style, solid) var(--stadium-popup-border-color, var(--LIGHT-GREY, transparent));
-        box-shadow: var(--stadium-popup-box-shadow, var(--BOX-SHADOW-COLOR, 0 8px 32px rgba(0, 0, 0, 0.3)));
-        overflow: auto;
-        max-height: calc(96vh - var(--stadium-popup-top-margin, 3rem) - var(--BODY-FOOTER-HEIGHT));
-        max-width: 96vw;
-        z-index: 1001;
-        inset: 0;
-        width: fit-content;
-        height: fit-content;
-        &:not(:has(.page-content)),
-        &:has(.page-content) .page-content {
-            & > .stack-layout-container:first-child > .control-container {
-                margin-top: 0;
-            }
-            & > .stack-layout-container {
-                padding-right: var(--stadium-popup-header-right-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
-                padding-left: var(--stadium-popup-header-left-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
-            }
-            & > .stack-layout-container:first-child {
-                padding-top: var(--stadium-popup-header-top-padding, calc(var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)));
-            }
-            & > .stack-layout-container:last-child {
-                padding-bottom: var(--stadium-popup-header-bottom-padding, calc(var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)));
-            }
-        }
-        &:not(:has(.stadium-popup-header)) {
-            & > .stack-layout-container:first-child > .control-container {
-                margin-top: 0;
-                padding-right: calc(var(--stadium-popup-header-right-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)) + var(--stadium-popup-close-icon-size, 3rem) / 2);
-            }
-            & .stadium-popup-closer {
-                position: absolute;
-                top: var(--stadium-popup-close-icon-top-position, 1rem);
-                right: var(--stadium-popup-close-icon-right-position, 1rem);
-            }
-        }
-        &:has(.stadium-popup-header) {
-            & > .stack-layout-container:first-child > .control-container {
-                margin-top: 0;
-            }
-            & .stack-layout-container:has(> .stadium-popup-header) {
-                display: flex;
-                align-items: center;
-                background-color: var(--stadium-popup-header-background-color, var(--GENERAL-BORDER-COLOR, #eee));
-                border-bottom: var(--stadium-popup-header-bottom-border-width, 0.1rem) solid var(--stadium-popup-header-bottom-border-color, var(--GENERAL-BORDER-COLOR, #eee));
-                padding-top: var(--stadium-popup-header-top-padding, calc(var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)));
-                padding-right: var(--stadium-popup-header-right-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
-                padding-bottom: var(--stadium-popup-header-bottom-padding, calc(var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)));
-                padding-left: var(--stadium-popup-header-left-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
-            }
-
-        }
-        & .stadium-popup-header {
-            display: flex;
-            justify-content: var(--stadium-popup-header-alignment, left);
-            font-size: var(--stadium-popup-header-font-size, var(--FONT-SIZE-LARGE, 2.2rem));
-            color: var(--stadium-popup-header-font-color, var(--BODY-FONT-COLOR, #333333));
+        cssMain.textContent = `html .stadium-popup {
+    position: fixed;
+    margin: var(--stadium-popup-top-margin, 3rem) auto 0 auto;
+    background-color: var(--stadium-popup-background-color, var(--BODY-BACKGROUND-COLOR, white));
+    border-radius: var(--stadium-popup-border-radius, 0.4rem);
+    border: var(--stadium-popup-border-width, 0) var(--stadium-popup-border-style, solid) var(--stadium-popup-border-color, var(--LIGHT-GREY, transparent));
+    box-shadow: var(--stadium-popup-box-shadow, var(--BOX-SHADOW-COLOR, 0 8px 32px rgba(0, 0, 0, 0.3)));
+    overflow: auto;
+    max-height: calc(96vh - var(--stadium-popup-top-margin, 3rem) - var(--BODY-FOOTER-HEIGHT));
+    max-width: 96vw;
+    z-index: 1001;
+    inset: 0;
+    width: fit-content;
+    height: fit-content;
+    &:not(:has(.page-content)),
+    &:has(.page-content) .page-content {
+        & > .stack-layout-container:first-child > .control-container {
             margin-top: 0;
         }
-        & .stadium-popup-closer {
-            margin-left: auto;
-            background-color: var(--stadium-popup-header-font-color, var(--LABEL-TEXT-COLOR, #6f6f6f));
-            mask-image: var(--stadium-popup-close-icon, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3C!-- Icon from Gridicons by Automattic - https://github.com/Automattic/gridicons/blob/trunk/LICENSE.md --%3E%3Cpath fill='currentColor' d='M18.36 19.78L12 13.41l-6.36 6.37l-1.42-1.42L10.59 12L4.22 5.64l1.42-1.42L12 10.59l6.36-6.36l1.41 1.41L13.41 12l6.36 6.36z'/%3E%3C/svg%3E"));
-            mask-repeat: no-repeat;
-            mask-position: center;
-            mask-size: contain;
-            background-repeat: no-repeat;
-            background-size: var(--stadium-popup-close-icon-size, 3rem);
-            background-position: center;
-            height: var(--stadium-popup-close-icon-size, 3rem);
-            width: var(--stadium-popup-close-icon-size, 3rem);
-            cursor: pointer;
+        & > .stack-layout-container {
+            padding-right: var(--stadium-popup-header-right-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
+            padding-left: var(--stadium-popup-header-left-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
+        }
+        & > .stack-layout-container:first-child {
+            padding-top: var(--stadium-popup-header-top-padding, calc(var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)));
+        }
+        & > .stack-layout-container:last-child {
+            padding-bottom: var(--stadium-popup-header-bottom-padding, calc(var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)));
         }
     }
-    & .stack-layout-container:has(> .stadium-popup:not([style*="display: none"])) {
-        &::after {
-            content: "";
-            position: fixed;
-            display: block;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-color: var(--stadium-popup-backdrop-color, var(--MODAL-OVERLAY-COLOR, rgb(0 0 0 / 25%)));
-            z-index: 1000;
-            backdrop-filter: var(--stadium-popup-backdrop-filter, none);
+    &:not(:has(.stadium-popup-header)) {
+        & > .stack-layout-container:first-child > .control-container {
+            margin-top: 0;
+            padding-right: calc(var(--stadium-popup-header-right-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)) + var(--stadium-popup-close-icon-size, 3rem) / 2);
         }
+        & .stadium-popup-closer {
+            position: absolute;
+            top: var(--stadium-popup-close-icon-top-position, 1rem);
+            right: var(--stadium-popup-close-icon-right-position, 1rem);
+        }
+    }
+    &:has(.stadium-popup-header) {
+        & > .stack-layout-container:first-child > .control-container {
+            margin-top: 0;
+        }
+        & .stack-layout-container:has(> .stadium-popup-header) {
+            display: flex;
+            align-items: center;
+            background-color: var(--stadium-popup-header-background-color, var(--GENERAL-BORDER-COLOR, #eee));
+            border-bottom: var(--stadium-popup-header-bottom-border-width, 0.1rem) solid var(--stadium-popup-header-bottom-border-color, var(--GENERAL-BORDER-COLOR, #eee));
+            padding-top: var(--stadium-popup-header-top-padding, calc(var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)));
+            padding-right: var(--stadium-popup-header-right-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
+            padding-bottom: var(--stadium-popup-header-bottom-padding, calc(var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem)));
+            padding-left: var(--stadium-popup-header-left-padding, var(--BODY-CONTAINER-RIGHTLEFT-PADDING, 1.4rem));
+        }
+
+    }
+    & .stadium-popup-header {
+        display: flex;
+        justify-content: var(--stadium-popup-header-alignment, left);
+        font-size: var(--stadium-popup-header-font-size, var(--FONT-SIZE-LARGE, 2.2rem));
+        color: var(--stadium-popup-header-font-color, var(--BODY-FONT-COLOR, #333333));
+        margin-top: 0;
+    }
+    & .stadium-popup-closer {
+        margin-left: auto;
+        background-color: var(--stadium-popup-header-font-color, var(--LABEL-TEXT-COLOR, #6f6f6f));
+        mask-image: var(--stadium-popup-close-icon, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3C!-- Icon from Gridicons by Automattic - https://github.com/Automattic/gridicons/blob/trunk/LICENSE.md --%3E%3Cpath fill='currentColor' d='M18.36 19.78L12 13.41l-6.36 6.37l-1.42-1.42L10.59 12L4.22 5.64l1.42-1.42L12 10.59l6.36-6.36l1.41 1.41L13.41 12l6.36 6.36z'/%3E%3C/svg%3E"));
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+        background-repeat: no-repeat;
+        background-size: var(--stadium-popup-close-icon-size, 3rem);
+        background-position: center;
+        height: var(--stadium-popup-close-icon-size, 3rem);
+        width: var(--stadium-popup-close-icon-size, 3rem);
+        cursor: pointer;
     }
 }
-html {
-    min-height: 100%;
-    font-size: 62.5%;
+html .stack-layout-container:has(> .stadium-popup:not([style*="display: none"]))::after {
+        content: "";
+        position: fixed;
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: var(--stadium-popup-backdrop-color, var(--MODAL-OVERLAY-COLOR, rgb(0 0 0 / 25%)));
+        z-index: 1000;
+        backdrop-filter: var(--stadium-popup-backdrop-filter, none);
 }`;
         document.head.appendChild(cssMain);
     }
