@@ -36,8 +36,8 @@ Popups serve to focus the attention of users on a particular set of UI elements.
       4. [Closing FullPage Popups](#closing-fullpage-popups)
       5. [Full-Page Popup Headers](#full-page-popup-headers)
 6. [CSS](#css)
-      1. [Customising CSS](#customising-css)
-   1. [Upgrading Stadium Repos](#upgrading-stadium-repos)
+   1. [Customising CSS](#customising-css)
+   2. [Upgrading Stadium Repos](#upgrading-stadium-repos)
 
 # Version
 3.4
@@ -362,16 +362,9 @@ To display a header in a full-page popup
 ![](images/PopupHeader.png)
 
 # CSS
-Variables exposed in the [*popup-variables.css*](popup-variables.css) file can be [customised](#customising-css).
+Variables exposed in the [*popup-variables.css*](popup-variables.css) file can optionally be used to customise the popup display.
 
-1. Create a folder called "CSS" inside of your Embedded Files in your application
-2. Drag the CSS files from this repo [*popup.css*](popup.css) into that folder
-3. Paste the link tag below into the *head* property of your application
-```html
-<link rel="stylesheet" href="{EmbeddedFiles}/CSS/popup.css">
-``` 
-
-### Customising CSS
+## Customising CSS
 1. Open the CSS file called [*popup-variables.css*](popup-variables.css) from this repo
 2. Adjust the variables in the *:root* element as you see fit
 3. Stadium 6.12+ users can comment out any variable they do **not** want to customise
