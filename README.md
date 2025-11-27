@@ -8,9 +8,9 @@ Popups serve to focus the attention of users on a particular set of UI elements.
 
 ## Overview
 1. Add a *Container* control to a page
-2. Assign the class "stadium-popup" to the *Container*
+2. Assign a class to the *Container* (e.g. popup)
 3. Set the *Visible* property to *false*
-4. Include the Popup global script in the Page.Load event handler
+4. Include the Popup global script in the Page.Load event handler and complete the input parameters
 5. Open the popup by setting the *Visible* property to *true*
 
 ## Contents <!-- omit in toc -->
@@ -282,7 +282,7 @@ The in-page popup shows and hides a container on the page as the buttons are cli
 
 ## Page Setup
 1. Drag a *Container* control to a page
-2. Add the "stadium-popup" class or another class of your choosing to the *Container* control *Classes* property 
+2. Add a class of your choosing to the *Container* control *Classes* property (e.g. popup)
 3. Set the *Visible* property of the *Container* control to "false"
 4. Drag any controls you wish to display in the popup into control
 
@@ -295,7 +295,7 @@ The in-page popup shows and hides a container on the page as the buttons are cli
    2. DismissOnEscape (boolean): Add *false* to disable closing popups by pressing the escape key (default true)
    3. HeaderCloseIcon (boolean): Add *false* to hide the X icon in the top right corner of the popup (default true)
    4. CallbackOnClose (string): Add a page script and provide it's name here. The script will be called when the popup is closed using the dismiss click, escape key or the closer icon. 
-   5. PopupContainerClass (string): If you used a class name other than "stadium-popup" for your popup container, provide that class name here
+   5. PopupContainerClass (string): Provide the class you assigned to the popup containers here (e.g. popup)
 
 ![](images/ScriptParameters.png)
 
@@ -333,7 +333,7 @@ The full-page popup method makes complete pages appear to be popups. These pages
 ### Popup Template
 1. Create a new template and name it "PopupTemplate"
 2. Drag a *Container* control into the "PopupTemplate"
-3. Add a class called "stadium-popup" or any other class of your choosing to the *Container* control *Classes* property 
+3. Add a class of your choosing to the *Container* control *Classes* property (e.g. popup)
 4. Drag the *PageContentPlaceholder* into the *Container* control
 5. Assign the "PopupTemplate" to pages to make them appear as popups
 
@@ -345,7 +345,7 @@ The full-page popup method makes complete pages appear to be popups. These pages
    2. DismissOnEscape (boolean): Add *false* to disable closing popups by pressing the escape key (default true)
    3. HeaderCloseIcon (boolean): Add *false* to hide the X icon in the top right corner of the popup (default true)
    4. CallbackOnClose (string): Add a page script and provide it's name here. The script will be called when the popup is closed using the dismiss click, escape key or the closer icon. 
-   5. PopupContainerClass (string): If you used a class name other than "stadium-popup" for your popup container, provide that class name here
+   5. PopupContainerClass (string): Provide that class you assigned to the popup container here (e.g. popup)
 
 ![](images/PopupTemplateView.png)
 
